@@ -3,7 +3,7 @@ import Hero from "@/components/Hero";
 import Experience from "@/components/Experience";
 import Skills from "@/components/Skills";
 import { portfolioData } from "@/data/content";
-import { Mail, Phone, MapPin, ExternalLink, Linkedin, Layout as BehanceIcon, Facebook } from "lucide-react";
+import { Mail, Phone, MapPin, ExternalLink, Linkedin, Layout as BehanceIcon, Facebook, MessageCircle } from "lucide-react";
 
 export default function Home() {
     return (
@@ -57,19 +57,23 @@ export default function Home() {
                         <h3 className="text-6xl md:text-8xl font-bold tracking-tighter mb-16">Let's create something <span className="gradient-text">iconic.</span></h3>
 
                         <div className="flex flex-wrap justify-center gap-6 md:gap-8">
-                            <a href={`mailto:${portfolioData.contact.email}`} className="social-icon-btn group" title="Email">
+                            <a href={`mailto:${portfolioData.contact.email}`} className="social-icon-btn social-btn-mail group" title="Email">
                                 <Mail className="w-5 h-5" />
                                 <span className="sr-only">Email</span>
                             </a>
-                            <a href={portfolioData.contact.facebook} target="_blank" rel="noopener noreferrer" className="social-icon-btn group" title="Facebook">
+                            <a href={portfolioData.contact.facebook} target="_blank" rel="noopener noreferrer" className="social-icon-btn social-btn-facebook group" title="Facebook">
                                 <Facebook className="w-5 h-5" />
                                 <span className="sr-only">Facebook</span>
                             </a>
-                            <a href={portfolioData.contact.linkedin} target="_blank" rel="noopener noreferrer" className="social-icon-btn group" title="LinkedIn">
+                            <a href={portfolioData.contact.whatsapp} target="_blank" rel="noopener noreferrer" className="social-icon-btn social-btn-whatsapp group" title="WhatsApp">
+                                <MessageCircle className="w-5 h-5" />
+                                <span className="sr-only">WhatsApp</span>
+                            </a>
+                            <a href={portfolioData.contact.linkedin} target="_blank" rel="noopener noreferrer" className="social-icon-btn social-btn-linkedin group" title="LinkedIn">
                                 <Linkedin className="w-5 h-5" />
                                 <span className="sr-only">LinkedIn</span>
                             </a>
-                            <a href={portfolioData.contact.behance} target="_blank" rel="noopener noreferrer" className="social-icon-btn group" title="Behance">
+                            <a href={portfolioData.contact.behance} target="_blank" rel="noopener noreferrer" className="social-icon-btn social-btn-behance group" title="Behance">
                                 <BehanceIcon className="w-5 h-5" />
                                 <span className="sr-only">Behance</span>
                             </a>

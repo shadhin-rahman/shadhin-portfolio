@@ -2,7 +2,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import { Menu, X, Facebook, Linkedin, Layout as BehanceIcon } from "lucide-react";
+import { Menu, X, Facebook, Linkedin, Layout as BehanceIcon, MessageCircle } from "lucide-react";
 import { portfolioData } from "@/data/content";
 
 export default function Navbar() {
@@ -30,7 +30,7 @@ export default function Navbar() {
                 {/* Logo */}
                 <Link
                     href="/"
-                    className="text-white font-extrabold text-3xl md:text-4xl tracking-tighter z-[60] hover:text-emerald-400 transition-all duration-300 group"
+                    className="logo-text z-[60] text-3xl md:text-4xl hover:text-emerald-400 transition-all duration-300 group"
                 >
                     SHADHIN<span className="text-emerald-500 group-hover:text-white transition-colors">.</span>
                 </Link>
@@ -112,14 +112,17 @@ export default function Navbar() {
                                 <a href={`mailto:${portfolioData.contact.email}`} className="text-white hover:text-emerald-500 transition-colors block text-xl font-medium">
                                     {portfolioData.contact.email}
                                 </a>
-                                <div className="flex gap-6 pt-4">
-                                    <a href={portfolioData.contact.facebook} target="_blank" rel="noopener noreferrer" className="social-icon-btn" title="Facebook">
+                                <div className="flex gap-4 pt-4">
+                                    <a href={portfolioData.contact.facebook} target="_blank" rel="noopener noreferrer" className="social-icon-btn social-btn-facebook" title="Facebook">
                                         <Facebook className="w-5 h-5" />
                                     </a>
-                                    <a href={portfolioData.contact.linkedin} target="_blank" rel="noopener noreferrer" className="social-icon-btn" title="LinkedIn">
+                                    <a href={portfolioData.contact.whatsapp} target="_blank" rel="noopener noreferrer" className="social-icon-btn social-btn-whatsapp" title="WhatsApp">
+                                        <MessageCircle className="w-5 h-5" />
+                                    </a>
+                                    <a href={portfolioData.contact.linkedin} target="_blank" rel="noopener noreferrer" className="social-icon-btn social-btn-linkedin" title="LinkedIn">
                                         <Linkedin className="w-5 h-5" />
                                     </a>
-                                    <a href={portfolioData.contact.behance} target="_blank" rel="noopener noreferrer" className="social-icon-btn" title="Behance">
+                                    <a href={portfolioData.contact.behance} target="_blank" rel="noopener noreferrer" className="social-icon-btn social-btn-behance" title="Behance">
                                         <BehanceIcon className="w-5 h-5" />
                                     </a>
                                 </div>
