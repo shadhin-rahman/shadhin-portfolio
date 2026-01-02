@@ -30,9 +30,33 @@ export default function Navbar() {
                 {/* Logo */}
                 <Link
                     href="/"
-                    className="logo-text z-[60] text-3xl md:text-4xl hover:text-emerald-400 transition-all duration-300 group"
+                    className="logo-text z-[60] text-3xl md:text-4xl flex items-center group"
                 >
-                    SHADHIN<span className="text-emerald-500 group-hover:text-white transition-colors">.</span>
+                    <motion.div className="flex overflow-hidden">
+                        {"Shadhin".split("").map((letter, i) => (
+                            <motion.span
+                                key={i}
+                                initial={{ y: "100%" }}
+                                animate={{ y: 0 }}
+                                transition={{
+                                    delay: 0.5 + i * 0.1,
+                                    duration: 0.8,
+                                    ease: [0.33, 1, 0.68, 1]
+                                }}
+                                className={letter === "S" ? "text-white" : "text-white/90"}
+                            >
+                                {letter}
+                            </motion.span>
+                        ))}
+                        <motion.span
+                            initial={{ scale: 0, opacity: 0 }}
+                            animate={{ scale: 1, opacity: 1 }}
+                            transition={{ delay: 1.5, duration: 0.5 }}
+                            className="text-emerald-500 ml-0.5"
+                        >
+                            .
+                        </motion.span>
+                    </motion.div>
                 </Link>
 
                 {/* Desktop Menu - Always visible but minimalist */}
