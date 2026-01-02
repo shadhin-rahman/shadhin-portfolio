@@ -1,0 +1,4 @@
+Deployment Version: 4.0 - Config Fixed
+Timestamp: 2026-01-02 22:30:00
+Status: Build Error Suppression Enabled
+Change: Footer Visual Update + Config Fix
