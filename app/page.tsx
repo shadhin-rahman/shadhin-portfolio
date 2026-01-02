@@ -111,8 +111,8 @@ export default function Home() {
                 </section>
 
                 {/* Footer */}
-                <footer className="flex flex-col md:flex-row justify-between items-center pt-20 pb-10 border-t border-white/10 text-white/50 font-mono text-xs uppercase tracking-[0.3em] gap-6">
-                    <div>© {new Date().getFullYear()} {portfolioData.name}</div>
+                <footer className="flex flex-col md:flex-row justify-between items-center pt-20 pb-10 border-t border-white/5 text-white/50 font-mono text-xs uppercase tracking-[0.3em] gap-6">
+                    <div>© {new Date().getFullYear()} · {portfolioData.name}</div>
                 </footer>
             </div>
         </main>
