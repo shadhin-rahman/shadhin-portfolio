@@ -9,13 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "framer-motion": "latest",
-    "lucide-react": "latest",
+    "framer-motion": "*",
+    "lucide-react": "*",
     "next": "14.2.3",
     "react": "^18",
     "react-dom": "^18",
-    "clsx": "latest",
-    "tailwind-merge": "latest"
+    "clsx": "*",
+    "tailwind-merge": "*"
   },
   "devDependencies": {
     "@types/node": "^20",
