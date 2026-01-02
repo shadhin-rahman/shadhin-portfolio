@@ -2,7 +2,8 @@
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Facebook, Linkedin, Layout as BehanceIcon } from "lucide-react";
+import { portfolioData } from "@/data/content";
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
@@ -106,14 +107,21 @@ export default function Navbar() {
                                 ))}
                             </div>
 
-                            <div className="mt-20 pt-10 border-t border-white/10 space-y-6">
+                            <div className="mt-20 pt-10 border-t border-white/10 space-y-8">
                                 <span className="text-white/50 text-xs uppercase tracking-[0.5em] font-bold block">Get in touch</span>
-                                <a href="mailto:shadhin005rahman@gmail.com" className="text-white hover:text-emerald-500 transition-colors block text-xl font-medium">
-                                    shadhin005rahman@gmail.com
+                                <a href={`mailto:${portfolioData.contact.email}`} className="text-white hover:text-emerald-500 transition-colors block text-xl font-medium">
+                                    {portfolioData.contact.email}
                                 </a>
-                                <div className="flex gap-8 pt-4">
-                                    <a href="#" className="text-white/50 hover:text-emerald-500 transition-colors text-sm uppercase tracking-widest font-bold">LinkedIn</a>
-                                    <a href="#" className="text-white/50 hover:text-emerald-500 transition-colors text-sm uppercase tracking-widest font-bold">Behance</a>
+                                <div className="flex gap-6 pt-4">
+                                    <a href={portfolioData.contact.facebook} target="_blank" rel="noopener noreferrer" className="social-icon-btn" title="Facebook">
+                                        <Facebook className="w-5 h-5" />
+                                    </a>
+                                    <a href={portfolioData.contact.linkedin} target="_blank" rel="noopener noreferrer" className="social-icon-btn" title="LinkedIn">
+                                        <Linkedin className="w-5 h-5" />
+                                    </a>
+                                    <a href={portfolioData.contact.behance} target="_blank" rel="noopener noreferrer" className="social-icon-btn" title="Behance">
+                                        <BehanceIcon className="w-5 h-5" />
+                                    </a>
                                 </div>
                             </div>
                         </motion.div>

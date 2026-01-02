@@ -7,6 +7,7 @@ export const portfolioData = {
         email: "shadhin005rahman@gmail.com",
         linkedin: "https://www.linkedin.com/in/shadhin-rahman/",
         behance: "https://www.behance.net/shadhin-rahman",
+        facebook: "https://www.facebook.com/profile.php?id=100083559032469",
         location: "Dhaka, Bangladesh"
     },
     skills: {

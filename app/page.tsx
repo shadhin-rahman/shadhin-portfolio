@@ -3,11 +3,11 @@ import Hero from "@/components/Hero";
 import Experience from "@/components/Experience";
 import Skills from "@/components/Skills";
 import { portfolioData } from "@/data/content";
-import { Mail, Phone, MapPin, ExternalLink, Linkedin, Layout as BehanceIcon } from "lucide-react";
+import { Mail, Phone, MapPin, ExternalLink, Linkedin, Layout as BehanceIcon, Facebook } from "lucide-react";
 
 export default function Home() {
     return (
-        <main className="min-h-screen mesh-gradient">
+        <main className="min-h-screen mesh-gradient transition-colors duration-500">
             <Navbar />
             <Hero />
 
@@ -56,15 +56,22 @@ export default function Home() {
                         <h2 className="text-emerald-400 font-mono text-xs tracking-[0.5em] uppercase mb-10 font-bold">Available for hire</h2>
                         <h3 className="text-6xl md:text-8xl font-bold tracking-tighter mb-16">Let's create something <span className="gradient-text">iconic.</span></h3>
 
-                        <div className="flex flex-wrap justify-center gap-10 text-white/40">
-                            <a href={`mailto:${portfolioData.contact.email}`} className="hover:text-white transition-colors flex items-center gap-2">
-                                <Mail className="w-4 h-4" /> Email
+                        <div className="flex flex-wrap justify-center gap-6 md:gap-8">
+                            <a href={`mailto:${portfolioData.contact.email}`} className="social-icon-btn group" title="Email">
+                                <Mail className="w-5 h-5" />
+                                <span className="sr-only">Email</span>
                             </a>
-                            <a href={portfolioData.contact.linkedin} target="_blank" className="hover:text-white transition-colors flex items-center gap-2">
-                                <Linkedin className="w-4 h-4" /> LinkedIn
+                            <a href={portfolioData.contact.facebook} target="_blank" rel="noopener noreferrer" className="social-icon-btn group" title="Facebook">
+                                <Facebook className="w-5 h-5" />
+                                <span className="sr-only">Facebook</span>
                             </a>
-                            <a href={portfolioData.contact.behance} target="_blank" className="hover:text-white transition-colors flex items-center gap-2">
-                                <BehanceIcon className="w-4 h-4" /> Behance
+                            <a href={portfolioData.contact.linkedin} target="_blank" rel="noopener noreferrer" className="social-icon-btn group" title="LinkedIn">
+                                <Linkedin className="w-5 h-5" />
+                                <span className="sr-only">LinkedIn</span>
+                            </a>
+                            <a href={portfolioData.contact.behance} target="_blank" rel="noopener noreferrer" className="social-icon-btn group" title="Behance">
+                                <BehanceIcon className="w-5 h-5" />
+                                <span className="sr-only">Behance</span>
                             </a>
                         </div>
                     </div>
