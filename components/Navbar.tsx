@@ -29,31 +29,31 @@ export default function Navbar() {
                 {/* Logo */}
                 <Link
                     href="/"
-                    className="text-white font-bold text-2xl tracking-tighter z-[60] hover:text-emerald-500 transition-colors"
+                    className="text-white font-extrabold text-3xl md:text-4xl tracking-tighter z-[60] hover:text-emerald-400 transition-all duration-300 group"
                 >
-                    SHADHIN<span className="text-emerald-500">.</span>
+                    SHADHIN<span className="text-emerald-500 group-hover:text-white transition-colors">.</span>
                 </Link>
 
                 {/* Desktop Menu - Always visible but minimalist */}
                 <div className="hidden md:flex items-center gap-2">
                     <button
                         onClick={() => setIsOpen(!isOpen)}
-                        className={`group flex items-center gap-3 px-6 py-3 rounded-full transition-all duration-500 z-[60] ${isOpen
-                            ? "bg-white text-black"
-                            : "glass-card text-white hover:bg-white/10"
+                        className={`group flex items-center gap-4 px-8 py-4 rounded-full transition-all duration-500 z-[60] border ${isOpen
+                            ? "bg-white text-black border-white"
+                            : "bg-black/20 backdrop-blur-md text-white border-white/10 hover:border-emerald-500/50 hover:bg-emerald-500/5"
                             }`}
                     >
-                        <span className="text-[10px] uppercase tracking-[0.3em] font-bold">
+                        <span className="text-xs uppercase tracking-[0.4em] font-black">
                             {isOpen ? "Close" : "Menu"}
                         </span>
-                        <div className="relative w-4 h-4">
+                        <div className="relative w-5 h-5">
                             <motion.span
                                 animate={isOpen ? { rotate: 45, y: 0 } : { rotate: 0, y: -4 }}
-                                className="absolute top-1/2 left-0 w-4 h-[1.5px] bg-current block"
+                                className="absolute top-1/2 left-0 w-5 h-[2px] bg-current block"
                             />
                             <motion.span
                                 animate={isOpen ? { rotate: -45, y: 0 } : { rotate: 0, y: 4 }}
-                                className="absolute top-1/2 left-0 w-4 h-[1.5px] bg-current block"
+                                className="absolute top-1/2 left-0 w-5 h-[2px] bg-current block"
                             />
                         </div>
                     </button>
@@ -62,9 +62,9 @@ export default function Navbar() {
                 {/* Mobile Menu Toggle */}
                 <button
                     onClick={() => setIsOpen(!isOpen)}
-                    className="md:hidden z-[60] p-3 glass-card rounded-xl text-white"
+                    className="md:hidden z-[60] p-4 glass-card rounded-2xl text-white border border-white/10"
                 >
-                    {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+                    {isOpen ? <X className="w-8 h-8" /> : <Menu className="w-8 h-8" />}
                 </button>
             </div>
 
