@@ -1,4 +1,4 @@
-Deployment Version: 4.1 - Fixed Deps
-Timestamp: 2026-01-02 22:45:00
-Status: Dependencies Fixed (No 'latest' tag)
-Change: Cleaned deps + Forced Re-deploy
+Deployment Version: 4.2 - Stable Deps
+Timestamp: 2026-01-02 22:50:00
+Status: Dependencies Pinned (Versions Fixed)
+Change: Reverted wildcards to stable versions
