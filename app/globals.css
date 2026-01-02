@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 240 10% 2%;
+  /* Deep Black */
+  --foreground: 0 0% 98%;
+  --card: 240 10% 4%;
+  --card-foreground: 0 0% 98%;
+  --popover: 240 10% 4%;
+  --popover-foreground: 0 0% 98%;
+  --primary: 158 94% 40%;
+  /* Emerald */
+  --primary-foreground: 144 100% 97%;
+  --secondary: 240 4% 16%;
+  --secondary-foreground: 0 0% 98%;
+  --muted: 240 4% 12%;
+  --muted-foreground: 240 5% 85%;
+  /* Brighter for better visibility */
+  --accent: 158 94% 40%;
+  --accent-foreground: 0 0% 98%;
+  --destructive: 0 63% 31%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 240 4% 10%;
+  --input: 240 4% 10%;
+  --ring: 158 94% 40%;
+  --radius: 1.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border selection:bg-emerald-500/30;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/[0.02] backdrop-blur-xl border border-white/[0.05] hover:border-emerald-500/20 transition-all duration-500;
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-b from-white to-white/50 font-bold;
+  }
+
+  .premium-blur {
+    @apply absolute pointer-events-none;
+    background: radial-gradient(circle at center, hsla(158, 94%, 40%, 0.1) 0%, transparent 70%);
+  }
+}
+
+.mesh-gradient {
+  background:
+    radial-gradient(at 0% 0%, hsla(158, 94%, 40%, 0.05) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, hsla(199, 89%, 48%, 0.03) 0px, transparent 50%),
+    linear-gradient(to bottom, #030303, #080808);
+}
+
+.hero-mask {
+  mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+}
