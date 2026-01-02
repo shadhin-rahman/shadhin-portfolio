@@ -4,20 +4,17 @@
 
 :root {
   --background: 240 10% 2%;
-  /* Deep Black */
   --foreground: 0 0% 98%;
   --card: 240 10% 4%;
   --card-foreground: 0 0% 98%;
   --popover: 240 10% 4%;
   --popover-foreground: 0 0% 98%;
   --primary: 158 94% 40%;
-  /* Emerald */
   --primary-foreground: 144 100% 97%;
   --secondary: 240 4% 16%;
   --secondary-foreground: 0 0% 98%;
   --muted: 240 4% 12%;
   --muted-foreground: 240 5% 85%;
-  /* Brighter for better visibility */
   --accent: 158 94% 40%;
   --accent-foreground: 0 0% 98%;
   --destructive: 0 63% 31%;
@@ -32,31 +29,6 @@
   --glass-border: rgba(255, 255, 255, 0.05);
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    --background: 0 0% 98%;
-    --foreground: 240 10% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
-    --primary: 158 94% 35%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 240 4.8% 95.9%;
-    --secondary-foreground: 240 5.9% 10%;
-    --muted: 240 4.8% 95.9%;
-    --muted-foreground: 240 3.8% 46.1%;
-    --accent: 158 94% 35%;
-    --accent-foreground: 240 5.9% 10%;
-    --border: 240 5.9% 90%;
-    --input: 240 5.9% 90%;
-    --mesh-bg-1: #fdfdfd;
-    --mesh-bg-2: #f0f0f0;
-    --glass-bg: rgba(0, 0, 0, 0.02);
-    --glass-border: rgba(0, 0, 0, 0.1);
-  }
-}
-
 @layer base {
   * {
     @apply border-border;
@@ -67,7 +39,7 @@
   }
 
   body {
-    @apply bg-background text-foreground antialiased transition-colors duration-300;
+    @apply bg-background text-foreground antialiased;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 }
