@@ -1,4 +1,4 @@
-Deployment Version: 4.0 - Config Fixed
-Timestamp: 2026-01-02 22:30:00
-Status: Build Error Suppression Enabled
-Change: Footer Visual Update + Config Fix
+Deployment Version: 4.1 - Fixed Deps
+Timestamp: 2026-01-02 22:45:00
+Status: Dependencies Fixed (No 'latest' tag)
+Change: Cleaned deps + Forced Re-deploy
