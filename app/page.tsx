@@ -50,6 +50,35 @@ export default function Home() {
                     </div>
                 </section>
 
+                {/* Creative Focus Section */}
+                <section className="scroll-mt-32 py-20">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                        <div className="space-y-10 order-2 md:order-1">
+                            <h2 className="text-xs font-mono tracking-[0.5em] text-emerald-400 uppercase font-bold">Creative Focus</h2>
+                            <h3 className="text-5xl md:text-8xl font-bold tracking-tighter leading-tight">
+                                Design with <br />
+                                <span className="text-white/40 italic">purpose.</span>
+                            </h3>
+                            <p className="text-white/50 text-xl font-light leading-relaxed max-w-xl">
+                                My approach combines 14 years of professional technical expertise with a creative eye for modern aesthetics. I focus on delivering results that aren't just beautiful, but strategically effective.
+                            </p>
+                            <div className="flex gap-4">
+                                <div className="h-0.5 w-12 bg-emerald-500 mt-4" />
+                                <p className="text-white/30 font-mono text-sm uppercase tracking-widest">Innovation · Excellence · Precision</p>
+                            </div>
+                        </div>
+                        <div className="relative order-1 md:order-2 px-4 md:px-0">
+                            <div className="aspect-[4/5] relative rounded-[3rem] overflow-hidden glass-card scale-95 hover:scale-100 transition-transform duration-700 hover:border-emerald-500/30 group">
+                                <img src="/creative_life_1.jpg" alt="Creative work" className="w-full h-full object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-1000" />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-60" />
+                            </div>
+                            <div className="absolute -bottom-10 -left-10 w-2/3 aspect-[4/3] rounded-[2.5rem] overflow-hidden border-[12px] border-background glass-card hidden md:block hover:scale-105 transition-transform duration-500 shadow-2xl">
+                                <img src="/creative_life_2.jpg" alt="Creative focus" className="w-full h-full object-cover" />
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
                 {/* Contact Section */}
                 <section id="contact" className="scroll-mt-32 pt-20">
                     <div className="flex flex-col items-center text-center max-w-3xl mx-auto py-20 border-t border-white/5">
@@ -84,10 +113,6 @@ export default function Home() {
                 {/* Footer */}
                 <footer className="flex flex-col md:flex-row justify-between items-center pt-20 pb-10 border-t border-white/10 text-white/50 font-mono text-xs uppercase tracking-[0.3em] gap-6">
                     <div>© {new Date().getFullYear()} {portfolioData.name}</div>
-                    <div className="flex gap-10">
-                        <span className="text-white/40">Modern Minimalist</span>
-                        <span className="text-white/40">Built with Next.js</span>
-                    </div>
                 </footer>
             </div>
         </main>

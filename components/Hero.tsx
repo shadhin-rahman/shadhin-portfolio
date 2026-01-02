@@ -28,7 +28,7 @@ export default function Hero() {
                         <img
                             src="/profile_main.jpg"
                             alt={portfolioData.name}
-                            className="w-full h-full object-cover scale-110 group-hover:scale-105 transition-transform duration-1000 grayscale-[0.5] group-hover:grayscale-0"
+                            className="w-full h-full object-cover scale-100 group-hover:scale-110 transition-transform duration-1000 grayscale-0"
                         />
                     </div>
                     <motion.div
