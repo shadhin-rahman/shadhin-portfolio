@@ -10,76 +10,88 @@ export default function Hero() {
             <div className="premium-blur top-[10%] left-[-5%] w-[500px] h-[500px] opacity-40 blur-[120px]" />
             <div className="premium-blur bottom-[10%] right-[-5%] w-[500px] h-[500px] opacity-20 blur-[120px]" />
 
-            <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 1.5 }}
-                className="text-center z-10 max-w-5xl"
-            >
-                {/* Refined Profile Image Arrangement */}
+            {/* Main Content Container - Split Layout */}
+            <div className="flex flex-col md:flex-row items-center justify-between w-full max-w-7xl z-10 gap-12 md:gap-20">
+
+                {/* Left Column - Profile Image */}
                 <motion.div
-                    initial={{ scale: 0.8, opacity: 0 }}
-                    animate={{ scale: 1, opacity: 1 }}
-                    transition={{ delay: 0.3, duration: 1, ease: [0.16, 1, 0.3, 1] }}
-                    className="relative w-32 h-32 mx-auto mb-12"
+                    initial={{ opacity: 0, x: -50 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 1, ease: "easeOut" }}
+                    className="w-full md:w-1/2 relative order-1"
                 >
-                    <div className="absolute inset-0 bg-emerald-500/10 rounded-[2.5rem] rotate-6 blur-xl" />
-                    <div className="relative w-full h-full rounded-[3rem] border border-white/10 overflow-hidden glass-card transition-all duration-700 group-hover:scale-[1.02] group-hover:border-emerald-500/30">
+                    <div className="relative w-full aspect-[4/5] max-w-lg mx-auto md:mr-auto rounded-[3rem] overflow-hidden glass-card border border-white/10 group">
+                        {/* Glow effect behind image */}
+                        <div className="absolute inset-0 bg-emerald-500/20 blur-[100px] -z-10" />
+
                         <img
-                            src="/profile_main.jpg"
+                            src="/hero_profile_new.jpg"
                             alt={portfolioData.name}
-                            className="w-full h-full object-cover scale-100 group-hover:scale-110 transition-transform duration-1000 grayscale-0"
+                            className="w-full h-full object-cover scale-100 group-hover:scale-105 transition-transform duration-1000"
                         />
+
+                        {/* Overlay gradient for text readability and aesthetic */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60" />
+
+                        {/* Floating Badge */}
+                        <motion.div
+                            animate={{ y: [0, -10, 0] }}
+                            transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
+                            className="absolute bottom-8 right-8 p-4 bg-emerald-500/90 backdrop-blur-md rounded-2xl shadow-xl shadow-emerald-500/20 border border-white/20"
+                        >
+                            <MousePointer2 className="w-6 h-6 text-black" />
+                        </motion.div>
                     </div>
+                </motion.div>
+
+                {/* Right Column - Text Content */}
+                <motion.div
+                    initial={{ opacity: 0, x: 50 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
+                    className="w-full md:w-1/2 text-left order-2"
+                >
                     <motion.div
-                        animate={{ y: [0, -10, 0] }}
-                        transition={{ repeat: Infinity, duration: 3 }}
-                        className="absolute -bottom-4 -right-4 p-2.5 bg-emerald-500 rounded-2xl shadow-xl shadow-emerald-500/20"
+                        initial={{ y: 20, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        transition={{ delay: 0.4 }}
                     >
-                        <MousePointer2 className="w-5 h-5 text-black" />
+                        <span className="text-emerald-500 font-mono text-sm tracking-[0.3em] uppercase mb-6 block font-bold">
+                            Based in {portfolioData.contact.location}
+                        </span>
+
+                        <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter mb-8 leading-[1.05]">
+                            Transforming <span className="text-white/60">visions</span> <br />
+                            into digital <span className="gradient-text">excellence.</span>
+                        </h1>
+
+                        <p className="text-lg md:text-xl text-white/70 mb-10 leading-relaxed max-w-2xl font-light">
+                            Hello, I'm <span className="text-white font-medium">{portfolioData.name}</span>.
+                            {portfolioData.bio}
+                        </p>
+
+                        <div className="flex flex-col sm:flex-row gap-6 items-start">
+                            <motion.a
+                                whileHover={{ scale: 1.02 }}
+                                whileTap={{ scale: 0.98 }}
+                                href="#portfolio"
+                                className="px-10 py-5 bg-white text-black rounded-full font-bold flex items-center gap-3 transition-colors hover:bg-emerald-400 group shadow-lg shadow-white/5"
+                            >
+                                View Projects
+                                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                            </motion.a>
+                            <motion.a
+                                whileHover={{ scale: 1.02 }}
+                                whileTap={{ scale: 0.98 }}
+                                href="#contact"
+                                className="px-10 py-5 glass-card rounded-full font-bold flex items-center gap-3 border-white/10 text-white hover:bg-white/5 transition-colors"
+                            >
+                                Get in touch
+                            </motion.a>
+                        </div>
                     </motion.div>
                 </motion.div>
-
-                <motion.div
-                    initial={{ y: 40, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{ delay: 0.5, duration: 0.8, ease: "easeOut" }}
-                >
-                    <span className="text-emerald-500 font-mono text-sm tracking-[0.3em] uppercase mb-6 block">
-                        Based in {portfolioData.contact.location}
-                    </span>
-
-                    <h1 className="text-6xl md:text-8xl font-bold tracking-tight mb-8 leading-[1.1]">
-                        Transforming <span className="text-white/60">visions</span> <br />
-                        into digital <span className="gradient-text">excellence.</span>
-                    </h1>
-
-                    <p className="text-lg md:text-xl text-white/70 mb-12 leading-relaxed max-w-3xl mx-auto font-light">
-                        Hello, I'm <span className="text-white font-medium">{portfolioData.name}</span>.
-                        {portfolioData.bio}
-                    </p>
-
-                    <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-                        <motion.a
-                            whileHover={{ scale: 1.02 }}
-                            whileTap={{ scale: 0.98 }}
-                            href="#portfolio"
-                            className="px-10 py-5 bg-white text-black rounded-full font-bold flex items-center gap-3 transition-colors hover:bg-emerald-400 group"
-                        >
-                            View Projects
-                            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                        </motion.a>
-                        <motion.a
-                            whileHover={{ scale: 1.02 }}
-                            whileTap={{ scale: 0.98 }}
-                            href="#contact"
-                            className="px-10 py-5 glass-card rounded-full font-bold flex items-center gap-3 border-white/10 text-white"
-                        >
-                            Get in touch
-                        </motion.a>
-                    </div>
-                </motion.div>
-            </motion.div>
+            </div>
 
         </section>
     );

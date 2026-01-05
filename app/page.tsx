@@ -67,13 +67,20 @@ export default function Home() {
                                 <p className="text-white/30 font-mono text-sm uppercase tracking-widest">Innovation · Excellence · Precision</p>
                             </div>
                         </div>
-                        <div className="relative order-1 md:order-2 px-4 md:px-0">
-                            <div className="aspect-[4/5] relative rounded-[3rem] overflow-hidden glass-card scale-95 hover:scale-100 transition-transform duration-700 hover:border-emerald-500/30 group">
+                        <div className="relative order-1 md:order-2 px-4 md:px-0 mt-10 md:mt-0">
+                            <div className="aspect-[4/5] relative rounded-[3rem] overflow-hidden glass-card scale-95 hover:scale-100 transition-transform duration-700 hover:border-emerald-500/30 group z-10">
                                 <img src="/creative_life_1.jpg" alt="Creative work" className="w-full h-full object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-1000" />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-60" />
                             </div>
-                            <div className="absolute -bottom-10 -left-10 w-2/3 aspect-[4/3] rounded-[2.5rem] overflow-hidden border-[12px] border-background glass-card hidden md:block hover:scale-105 transition-transform duration-500 shadow-2xl">
+
+                            {/* Original floating image */}
+                            <div className="absolute -bottom-10 -left-10 w-2/3 aspect-[4/3] rounded-[2.5rem] overflow-hidden border-[12px] border-background glass-card hidden md:block hover:scale-105 transition-transform duration-500 shadow-2xl z-20">
                                 <img src="/creative_life_2.jpg" alt="Creative focus" className="w-full h-full object-cover" />
+                            </div>
+
+                            {/* New added image (Old Hero Image) */}
+                            <div className="absolute -top-12 -right-8 w-1/2 aspect-square rounded-[2rem] overflow-hidden border-[8px] border-background glass-card hidden md:block hover:scale-110 transition-transform duration-500 shadow-2xl z-30">
+                                <img src="/profile_main.jpg" alt="Profile Detail" className="w-full h-full object-cover" />
                             </div>
                         </div>
                     </div>
