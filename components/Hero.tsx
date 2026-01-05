@@ -20,24 +20,27 @@ export default function Hero() {
                     transition={{ duration: 1, ease: "easeOut" }}
                     className="w-full md:w-1/2 relative order-1"
                 >
-                    <div className="relative w-full aspect-[4/5] max-w-lg mx-auto md:mr-auto rounded-[3rem] overflow-hidden glass-card border border-white/10 group">
+                    <div className="relative w-full aspect-[4/5] max-w-lg mx-auto md:mr-auto rounded-[3rem] glass-card border border-white/10 group overflow-visible">
+                        {/* Internal Gradient for Transparent Image Support */}
+                        <div className="absolute inset-0 bg-gradient-to-b from-white/5 to-transparent rounded-[3rem]" />
+
                         {/* Glow effect behind image */}
-                        <div className="absolute inset-0 bg-emerald-500/20 blur-[100px] -z-10" />
+                        <div className="absolute top-10 left-10 right-10 bottom-10 bg-emerald-500/30 blur-[80px] -z-10 rounded-full" />
 
                         <img
-                            src="/hero_profile_new.jpg"
+                            src="/Shadhin.png"
                             alt={portfolioData.name}
-                            className="w-full h-full object-cover scale-100 group-hover:scale-105 transition-transform duration-1000"
+                            className="w-full h-full object-contain object-bottom scale-[1.15] -translate-y-4 group-hover:scale-[1.2] transition-transform duration-1000 origin-bottom"
                         />
 
                         {/* Overlay gradient for text readability and aesthetic */}
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-40 rounded-[3rem] pointer-events-none" />
 
                         {/* Floating Badge */}
                         <motion.div
                             animate={{ y: [0, -10, 0] }}
                             transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-                            className="absolute bottom-8 right-8 p-4 bg-emerald-500/90 backdrop-blur-md rounded-2xl shadow-xl shadow-emerald-500/20 border border-white/20"
+                            className="absolute bottom-8 right-8 p-4 bg-emerald-500/90 backdrop-blur-md rounded-2xl shadow-xl shadow-emerald-500/20 border border-white/20 z-20"
                         >
                             <MousePointer2 className="w-6 h-6 text-black" />
                         </motion.div>
