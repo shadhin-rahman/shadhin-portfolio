@@ -79,17 +79,23 @@ export const portfolioData = {
             }
         ]
     },
-    skills: [
-        "Adobe Photoshop (Expert)",
-        "Photo Retouching & Image Enhancement",
-        "Clipping Path & Ghost Mannequin",
-        "Background Removal",
-        "Color Correction",
-        "UI/UX Design Basics",
-        "Team Leadership",
-        "Quality Control",
-        "Client Communication"
-    ],
+    skills: {
+        management: [
+            "Team Leadership",
+            "Quality Control",
+            "Client Communication"
+        ],
+        design: [
+            "Photo Retouching & Image Enhancement",
+            "Clipping Path & Ghost Mannequin",
+            "Background Removal",
+            "Color Correction",
+            "UI/UX Design Basics"
+        ],
+        tools: [
+            "Adobe Photoshop (Expert)"
+        ]
+    },
     contact: {
         phone: "+88 01723 735896",
         email: "shadhin005rahman@gmail.com",
