@@ -20,29 +20,30 @@ export default function Hero() {
                     transition={{ duration: 1, ease: "easeOut" }}
                     className="w-full md:w-1/2 relative order-1"
                 >
-                    <div className="relative w-full aspect-[4/5] max-w-lg mx-auto md:mr-auto rounded-[3rem] glass-card border border-white/10 group overflow-visible">
-                        {/* Internal Gradient for Transparent Image Support */}
-                        <div className="absolute inset-0 bg-gradient-to-b from-white/5 to-transparent rounded-[3rem]" />
+                    <div className="relative w-full max-w-md mx-auto md:mr-auto group flex flex-col justify-end aspect-[4/5]">
+                        {/* Glow effect distinct from card */}
+                        <div className="absolute top-20 left-10 right-10 bottom-10 bg-white/20 blur-[80px] -z-10 rounded-full" />
 
-                        {/* Glow effect behind image */}
-                        <div className="absolute top-10 left-10 right-10 bottom-10 bg-emerald-500/30 blur-[80px] -z-10 rounded-full" />
+                        {/* White Card Background - Positioned to allow head pop-out */}
+                        <div className="absolute bottom-0 left-0 right-0 h-[85%] bg-gradient-to-b from-white to-zinc-200 rounded-[3rem] shadow-2xl border border-white/20 overflow-hidden">
+                            {/* Subtle detail inside white card */}
+                            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-emerald-500/10 via-transparent to-transparent opacity-50" />
+                        </div>
 
+                        {/* The Person Image - Aligned properly to bottom */}
                         <img
                             src="/Shadhin.png"
                             alt={portfolioData.name}
-                            className="w-full h-full object-contain object-bottom scale-[1.15] -translate-y-4 group-hover:scale-[1.2] transition-transform duration-1000 origin-bottom"
+                            className="relative z-10 w-full drop-shadow-2xl scale-[1.05] origin-bottom transition-transform duration-700 group-hover:scale-[1.08]"
                         />
-
-                        {/* Overlay gradient for text readability and aesthetic */}
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-40 rounded-[3rem] pointer-events-none" />
 
                         {/* Floating Badge */}
                         <motion.div
                             animate={{ y: [0, -10, 0] }}
                             transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-                            className="absolute bottom-8 right-8 p-4 bg-emerald-500/90 backdrop-blur-md rounded-2xl shadow-xl shadow-emerald-500/20 border border-white/20 z-20"
+                            className="absolute bottom-8 right-8 p-4 bg-black/90 backdrop-blur-md rounded-2xl shadow-xl shadow-black/20 border border-white/10 z-20"
                         >
-                            <MousePointer2 className="w-6 h-6 text-black" />
+                            <MousePointer2 className="w-6 h-6 text-emerald-400" />
                         </motion.div>
                     </div>
                 </motion.div>
@@ -60,17 +61,15 @@ export default function Hero() {
                         transition={{ delay: 0.4 }}
                     >
                         <span className="text-emerald-500 font-mono text-sm tracking-[0.3em] uppercase mb-6 block font-bold">
-                            Based in {portfolioData.contact.location}
+                            {portfolioData.hero.subHeading}
                         </span>
 
-                        <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter mb-8 leading-[1.05]">
-                            Transforming <span className="text-white/60">visions</span> <br />
-                            into digital <span className="gradient-text">excellence.</span>
+                        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter mb-8 leading-[1.05]">
+                            Hi, I’m <span className="gradient-text">{portfolioData.name}</span>
                         </h1>
 
                         <p className="text-lg md:text-xl text-white/70 mb-10 leading-relaxed max-w-2xl font-light">
-                            Hello, I'm <span className="text-white font-medium">{portfolioData.name}</span>.
-                            {portfolioData.bio}
+                            {portfolioData.hero.description}
                         </p>
 
                         <div className="flex flex-col sm:flex-row gap-6 items-start">

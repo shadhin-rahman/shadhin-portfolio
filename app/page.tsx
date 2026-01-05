@@ -1,9 +1,13 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import About from "@/components/About";
+import Services from "@/components/Services";
 import Experience from "@/components/Experience";
 import Skills from "@/components/Skills";
+import Education from "@/components/Education";
 import { portfolioData } from "@/data/content";
 import { Mail, Phone, MapPin, ExternalLink, Linkedin, Layout as BehanceIcon, Facebook, MessageCircle } from "lucide-react";
+import ContactForm from "@/components/ContactForm";
 
 export default function Home() {
     return (
@@ -11,13 +15,22 @@ export default function Home() {
             <Navbar />
             <Hero />
 
-            <div className="max-w-6xl mx-auto px-6 py-40 space-y-60">
+            <div className="max-w-7xl mx-auto px-6 py-20 space-y-32">
+
+                {/* About Section */}
+                <About />
+
+                {/* Services Section */}
+                <Services />
 
                 {/* Experience Section */}
                 <Experience />
 
                 {/* Skills Section */}
                 <Skills />
+
+                {/* Education Section */}
+                <Education />
 
                 {/* Portfolio Section */}
                 <section id="portfolio" className="scroll-mt-32">
@@ -87,38 +100,63 @@ export default function Home() {
                 </section>
 
                 {/* Contact Section */}
-                <section id="contact" className="scroll-mt-32 pt-20">
-                    <div className="flex flex-col items-center text-center max-w-3xl mx-auto py-20 border-t border-white/5">
-                        <h2 className="text-emerald-400 font-mono text-xs tracking-[0.5em] uppercase mb-10 font-bold">Available for hire</h2>
-                        <h3 className="text-6xl md:text-8xl font-bold tracking-tighter mb-16">Let's create something <span className="gradient-text">iconic.</span></h3>
+                <section id="contact" className="scroll-mt-32 pt-20 pb-20">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start border-t border-white/5 pt-20">
+                        {/* Left Side: Contact Info */}
+                        <div className="flex flex-col items-center md:items-start text-center md:text-left space-y-10">
+                            <div>
+                                <h2 className="text-emerald-400 font-mono text-xs tracking-[0.5em] uppercase mb-6 font-bold">Get In Touch</h2>
+                                <h3 className="text-6xl md:text-7xl font-bold tracking-tighter mb-8">Let's create something <span className="gradient-text">iconic.</span></h3>
+                                <p className="text-white/60 text-lg leading-relaxed max-w-md mx-auto md:mx-0">
+                                    Feel free to contact me for professional image editing, creative design projects, or collaboration opportunities.
+                                </p>
+                            </div>
 
-                        <div className="flex flex-wrap justify-center gap-6 md:gap-8">
-                            <a href={`mailto:${portfolioData.contact.email}`} className="social-icon-btn social-btn-mail group" title="Email">
-                                <Mail className="w-5 h-5" />
-                                <span className="sr-only">Email</span>
-                            </a>
-                            <a href={portfolioData.contact.facebook} target="_blank" rel="noopener noreferrer" className="social-icon-btn social-btn-facebook group" title="Facebook">
-                                <Facebook className="w-5 h-5" />
-                                <span className="sr-only">Facebook</span>
-                            </a>
-                            <a href={portfolioData.contact.whatsapp} target="_blank" rel="noopener noreferrer" className="social-icon-btn social-btn-whatsapp group" title="WhatsApp">
-                                <MessageCircle className="w-5 h-5" />
-                                <span className="sr-only">WhatsApp</span>
-                            </a>
-                            <a href={portfolioData.contact.linkedin} target="_blank" rel="noopener noreferrer" className="social-icon-btn social-btn-linkedin group" title="LinkedIn">
-                                <Linkedin className="w-5 h-5" />
-                                <span className="sr-only">LinkedIn</span>
-                            </a>
-                            <a href={portfolioData.contact.behance} target="_blank" rel="noopener noreferrer" className="social-icon-btn social-btn-behance group" title="Behance">
-                                <BehanceIcon className="w-5 h-5" />
-                                <span className="sr-only">Behance</span>
-                            </a>
+                            <div className="flex flex-col gap-4 text-lg text-white/80">
+                                <div className="flex items-center gap-3">
+                                    <Phone className="w-5 h-5 text-emerald-400" />
+                                    <span>{portfolioData.contact.phone}</span>
+                                </div>
+                                <div className="flex items-center gap-3">
+                                    <Mail className="w-5 h-5 text-emerald-400" />
+                                    <span>{portfolioData.contact.email}</span>
+                                </div>
+                            </div>
+
+                            <div className="flex flex-wrap justify-center md:justify-start gap-6 pt-4">
+                                <a href={`mailto:${portfolioData.contact.email}`} className="social-icon-btn social-btn-mail group" title="Email">
+                                    <Mail className="w-5 h-5" />
+                                    <span className="sr-only">Email</span>
+                                </a>
+                                <a href={portfolioData.contact.facebook} target="_blank" rel="noopener noreferrer" className="social-icon-btn social-btn-facebook group" title="Facebook">
+                                    <Facebook className="w-5 h-5" />
+                                    <span className="sr-only">Facebook</span>
+                                </a>
+                                <a href={portfolioData.contact.whatsapp} target="_blank" rel="noopener noreferrer" className="social-icon-btn social-btn-whatsapp group" title="WhatsApp">
+                                    <MessageCircle className="w-5 h-5" />
+                                    <span className="sr-only">WhatsApp</span>
+                                </a>
+                                <a href={portfolioData.contact.linkedin} target="_blank" rel="noopener noreferrer" className="social-icon-btn social-btn-linkedin group" title="LinkedIn">
+                                    <Linkedin className="w-5 h-5" />
+                                    <span className="sr-only">LinkedIn</span>
+                                </a>
+                                <a href={portfolioData.contact.behance} target="_blank" rel="noopener noreferrer" className="social-icon-btn social-btn-behance group" title="Behance">
+                                    <BehanceIcon className="w-5 h-5" />
+                                    <span className="sr-only">Behance</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        {/* Right Side: Contact Form */}
+                        <div className="w-full">
+                            <ContactForm />
                         </div>
                     </div>
                 </section>
 
                 {/* Footer */}
                 <footer className="flex flex-col md:flex-row justify-between items-center pt-20 pb-10 border-t border-white/5 text-white/50 font-mono text-xs uppercase tracking-[0.3em] gap-6">
+                    <div className="max-w-xl text-center md:text-left">{portfolioData.footerBio}</div>
                     <div>© {new Date().getFullYear()} · {portfolioData.name}</div>
                 </footer>
             </div>
