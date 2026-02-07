@@ -1,9 +1,103 @@
 export const portfolioData = {
-    name: "Motiur Rahman Shadhin",
-    role: "Service Manager & Senior Graphic Designer",
-    bio: "Senior Graphic Designer with over 14 years of experience, highly proficient in Adobe Photoshop and skilled in various types of image editing. Also experienced in designing intuitive and visually appealing UI/UX interfaces.",
+    name: "Shadhin Rahman",
+    role: "Senior Graphic Designer & Service Manager",
+    hero: {
+        heading: "Hi, I’m Shadhin Rahman",
+        subHeading: "Senior Graphic Designer & Service Manager",
+        description: "With over 14+ years of professional experience, I specialize in high-end image editing and Photoshop-based creative solutions. I help brands and businesses deliver clean, consistent, and visually impactful images that meet international standards.",
+        cta: {
+            primary: "View My Work",
+            secondary: "Contact Me"
+        }
+    },
+    about: {
+        title: "About Me",
+        content: [
+            "I am a professional Senior Graphic Designer and Service Manager with more than 14 years of experience in the graphic design and image editing industry. My expertise lies in Adobe Photoshop, specializing in photo retouching, clipping path, multi-clipping path, ghost mannequin, background removal, and advanced image manipulation.",
+            "Currently, I work at Path as an Order Process and Service Manager, where I lead a dedicated production team delivering high-quality image editing services for global clients. My responsibilities include quality control, team management, workflow optimization, and ensuring timely project delivery.",
+            "Alongside image editing, I also have hands-on experience in UI/UX design, allowing me to create visually appealing and user-friendly digital designs. I am passionate about maintaining precision, consistency, and creativity in every project I handle."
+        ]
+    },
+    services: [
+        "Professional Photo Retouching",
+        "Clipping Path & Multi-Clipping Path",
+        "Ghost Mannequin / Neck Joint",
+        "Background Removal",
+        "Color Correction & Image Enhancement",
+        "E-commerce Product Image Editing",
+        "Bulk Image Editing & Quality Control",
+        "UI/UX Design Support"
+    ],
+    experience: [
+        {
+            company: "Path",
+            role: "Order Process & Service Manager",
+            period: "October 2018 – Present",
+            description: "At Path, I manage end-to-end image editing operations and lead a professional production team. I ensure high-quality service delivery in clipping path, ghost mannequin, and advanced image editing while maintaining workflow efficiency and client satisfaction."
+        },
+        {
+            company: "Graphics Home",
+            role: "Operations Director | Shift In-Charge | Team Lead",
+            period: "2009 – 2018",
+            description: "At Graphics Home, I worked in multiple leadership roles over nearly a decade. I supervised design teams, managed daily operations across shifts, maintained quality standards, and optimized workflows to support large-scale graphic production."
+        },
+        {
+            company: "Mindworking Asia",
+            role: "Graphic Designer",
+            period: "2013 – 2014",
+            description: "Worked as a Graphic Designer delivering professional image editing and creative solutions for international clients in a fast-paced outsourcing environment."
+        }
+    ],
+    education: {
+        academic: [
+            {
+                degree: "Bachelor’s Degree in Social Sciences",
+                institution: "Govt. Bangla College"
+            },
+            {
+                degree: "HSC (Arts)",
+                institution: "Chilahati Degree Govt. College"
+            },
+            {
+                degree: "SSC (Arts)",
+                institution: "Chilahati Merchants High School"
+            }
+        ],
+        training: [
+            {
+                course: "Certified UX Design (CUXD)",
+                institution: "Userhub"
+            },
+            {
+                course: "Web Design",
+                institution: "Creative IT Institute"
+            },
+            {
+                course: "Communication Skills Program",
+                institution: "U.S. Embassy (Training)",
+                year: "2024"
+            }
+        ]
+    },
+    skills: {
+        management: [
+            "Team Leadership",
+            "Quality Control",
+            "Client Communication"
+        ],
+        design: [
+            "Photo Retouching & Image Enhancement",
+            "Clipping Path & Ghost Mannequin",
+            "Background Removal",
+            "Color Correction",
+            "UI/UX Design Basics"
+        ],
+        tools: [
+            "Adobe Photoshop (Expert)"
+        ]
+    },
     contact: {
-        phone: "+88 01723735896",
+        phone: "+88 01723 735896",
         email: "shadhin005rahman@gmail.com",
         linkedin: "https://www.linkedin.com/in/shadhin-rahman/",
         behance: "https://www.behance.net/shadhin-rahman",
@@ -11,65 +105,5 @@ export const portfolioData = {
         whatsapp: "https://wa.me/8801723735896",
         location: "Dhaka, Bangladesh"
     },
-    skills: {
-        management: ["Team Leadership", "Order Processing", "Service Management", "Training", "Strategic Planning"],
-        design: [
-            "Advanced Image Editing",
-            "UI/UX Design",
-            "Clipping Path",
-            "Multi-clipping Path",
-            "Ghost Mannequin",
-            "Retouching & Masking"
-        ],
-        tools: ["Adobe Photoshop", "Adobe Illustrator", "Figma"]
-    },
-    experience: [
-        {
-            company: "Path",
-            role: "Order Processing and Service Manager",
-            period: "Oct 2018 - Present",
-            description: "Steering the team towards excellence in delivering specialized services like Clipping path and Ghost mannequin, fostering collaboration and ensuring customer satisfaction."
-        },
-        {
-            company: "Graphics Home",
-            role: "Shift In charge and Operations Director",
-            period: "Jan 2016 - Aug 2018",
-            description: "Overseeing daily operations, managing teams, optimizing processes, and driving strategic initiatives to enhance productivity."
-        },
-        {
-            company: "Graphics Home",
-            role: "Team Specialist / Supervisor",
-            period: "Jan 2013 - Dec 2015",
-            description: "Leading and managing a team to deliver high-quality graphic projects, coordinating tasks, and ensuring deadlines were met."
-        },
-        {
-            company: "Mindworking Asia",
-            role: "Graphic Designer",
-            period: "Apr 2013 - Aug 2014",
-            description: "Delivering creative and digital production solutions with a focus on efficiency and quality."
-        },
-        {
-            company: "Graphics Home",
-            role: "Senior Executive",
-            period: "Jun 2009 - Dec 2012",
-            description: "Managing projects, leading teams, and delivering high-quality graphic solutions."
-        }
-    ],
-    education: [
-        {
-            institution: "Govt. Bangla College",
-            degree: "Bachelor's degree, Social Sciences",
-            period: "2010 - 2013"
-        },
-        {
-            institution: "Userhub",
-            degree: "CUXD (Certified User Experience Designer)",
-            period: "2018"
-        },
-        {
-            institution: "Creative it institute",
-            degree: "Web Design",
-            period: "2016"
-        }
-    ]
+    footerBio: "Senior Graphic Designer & Service Manager with 14+ years of experience in professional image editing and creative design."
 };
