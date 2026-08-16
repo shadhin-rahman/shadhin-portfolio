@@ -2,7 +2,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import { Facebook, Linkedin, Layout as BehanceIcon, MessageCircle, ArrowUpRight, ArrowRight } from "lucide-react";
+import { Facebook, Linkedin, Layout as BehanceIcon, MessageCircle, ArrowRight } from "lucide-react";
 import { portfolioData } from "@/data/content";
 import ThemeToggle from "./ThemeToggle";
 
@@ -136,17 +136,17 @@ export default function Navbar() {
                                             <Link
                                                 href={item.href}
                                                 onClick={() => setIsOpen(false)}
-                                                className="group flex items-center justify-between gap-4 py-4 border-b border-black/5 dark:border-white/5 transition-colors"
+                                                className="group relative block py-4 border-b border-black/5 dark:border-white/5 transition-colors"
                                             >
                                                 <span className="flex items-baseline gap-4">
-                                                    <span className="font-mono text-sm font-bold text-brand-700 dark:text-brand-400">
+                                                    <span className="font-mono text-sm font-bold text-brand-700 dark:text-brand-400 transition-colors group-hover:text-brand-600 dark:group-hover:text-brand-400">
                                                         {item.no}
                                                     </span>
-                                                    <span className="logo-text text-3xl md:text-4xl font-bold text-[#1d1b16] dark:text-[#f5f2ec] group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors tracking-tight">
+                                                    <span className="logo-text text-3xl md:text-4xl font-bold text-[#1d1b16] dark:text-[#f5f2ec] group-hover:text-brand-700 dark:group-hover:text-brand-400 group-hover:translate-x-1.5 transition-all duration-300 tracking-tight">
                                                         {item.name}
                                                     </span>
                                                 </span>
-                                                <ArrowUpRight className="w-6 h-6 text-[#1d1b16]/30 dark:text-white/30 group-hover:text-brand-600 dark:group-hover:text-brand-400 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" />
+                                                <span className="absolute left-0 bottom-0 h-[3px] w-0 bg-brand-400 rounded-full group-hover:w-full transition-all duration-500" />
                                             </Link>
                                         </motion.div>
                                     ))}

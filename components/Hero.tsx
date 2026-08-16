@@ -1,7 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import { portfolioData } from "@/data/content";
-import { ArrowRight, ArrowUpRight, Award, BadgeCheck } from "lucide-react";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 
 export default function Hero() {
     return (
@@ -93,38 +93,6 @@ export default function Hero() {
                                 className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-[1.03]"
                             />
                         </div>
-
-                        {/* Floating badge - experience */}
-                        <motion.div
-                            animate={{ y: [0, -10, 0] }}
-                            transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-                            className="absolute -top-6 -left-4 md:-left-10 flex items-center gap-3 px-5 py-4 bg-[#1d1b16] dark:bg-[#1d1b16] text-white rounded-2xl shadow-xl z-20"
-                        >
-                            <div className="w-11 h-11 rounded-full bg-brand-400 flex items-center justify-center">
-                                <Award className="w-6 h-6 text-black" />
-                            </div>
-                            <div>
-                                <div className="text-xl font-black leading-none">14+ yrs</div>
-                                <div className="text-xs text-white/60 font-semibold mt-1.5">Experience</div>
-                            </div>
-                        </motion.div>
-
-                        {/* Floating badge - approach */}
-                        <motion.div
-                            animate={{ y: [0, 10, 0] }}
-                            transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
-                            className="absolute -bottom-7 -right-4 md:-right-10 px-6 py-5 bg-white dark:bg-[#1d1b16] rounded-2xl border border-black/10 dark:border-white/10 shadow-xl z-20"
-                        >
-                            <div className="flex gap-2 items-center mb-2">
-                                <BadgeCheck className="w-5 h-5 text-brand-600 dark:text-brand-400" />
-                                <span className="text-[11px] uppercase tracking-[0.2em] font-black text-[#1d1b16]/50 dark:text-white/50">
-                                    Quality
-                                </span>
-                            </div>
-                            <div className="text-lg md:text-xl font-black text-brand-700 dark:text-brand-400 leading-tight">
-                                Pixel Perfect
-                            </div>
-                        </motion.div>
                     </div>
                 </motion.div>
             </div>
