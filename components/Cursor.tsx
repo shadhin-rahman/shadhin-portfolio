@@ -42,8 +42,8 @@ export default function Cursor() {
             }}
             animate={{
                 scale: isHovering ? 2 : 1,
-                backgroundColor: isHovering ? "rgba(16, 185, 129, 0.3)" : "rgba(16, 185, 129, 0.15)",
-                border: isHovering ? "1px solid rgba(16, 185, 129, 0.5)" : "1px solid rgba(16, 185, 129, 0.3)",
+                backgroundColor: isHovering ? "rgba(137, 243, 54, 0.35)" : "rgba(137, 243, 54, 0.2)",
+                border: isHovering ? "1px solid rgba(137, 243, 54, 0.6)" : "1px solid rgba(137, 243, 54, 0.4)",
             }}
             className="fixed top-0 left-0 w-8 h-8 rounded-full pointer-events-none z-[9999] hidden md:block backdrop-blur-[2px]"
         />

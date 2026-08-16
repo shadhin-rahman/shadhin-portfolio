@@ -1,13 +1,10 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import Cursor from "@/components/Cursor";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
-
 export const metadata: Metadata = {
-    title: "Shadhin",
-    description: "Service Manager & Senior Graphic Designer Portfolio",
+    title: "Shadhin Rahman — Senior Graphic Designer & Service Manager",
+    description: "Creative portfolio of Shadhin Rahman — Senior Graphic Designer & Service Manager with 14+ years of experience in professional image editing, photo retouching, clipping path and creative design.",
     icons: {
         icon: "/favicon.png",
         shortcut: "/favicon.png",
@@ -22,7 +19,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body className={inter.className}>
+            <body>
                 <div className="grain" />
                 <Cursor />
                 {children}

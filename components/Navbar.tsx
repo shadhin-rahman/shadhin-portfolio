@@ -11,39 +11,33 @@ export default function Navbar() {
 
     useEffect(() => {
         const handleScroll = () => {
-            setScrolled(window.scrollY > 50);
+            setScrolled(window.scrollY > 24);
         };
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
     const navItems = [
-        { name: "Portfolio", href: "#portfolio" },
+        { name: "About", href: "#about" },
+        { name: "Services", href: "#services" },
         { name: "Experience", href: "#experience" },
         { name: "Skills", href: "#skills" },
         { name: "Connect", href: "#contact" },
     ];
 
     return (
-        <nav className="fixed top-0 left-0 w-full z-50 px-6 py-6 font-mono">
-            <div className="max-w-7xl mx-auto flex justify-between items-center">
+        <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${scrolled ? "bg-white/80 backdrop-blur-xl border-b border-black/5 shadow-lg shadow-black/5" : "bg-transparent border-b border-transparent"}`}>
+            <div className="max-w-7xl mx-auto flex justify-between items-center px-6 py-5">
                 {/* Logo */}
-                <Link
-                    href="/"
-                    className="logo-text z-[60] text-3xl md:text-4xl flex items-center group"
-                >
+                <Link href="/" className="logo-text z-[60] text-3xl flex items-center group">
                     <motion.div className="flex overflow-hidden">
                         {"Shadhin".split("").map((letter, i) => (
                             <motion.span
-                                key={i}
+                                key={`${letter}-${i}`}
                                 initial={{ y: "100%" }}
                                 animate={{ y: 0 }}
-                                transition={{
-                                    delay: 0.5 + i * 0.1,
-                                    duration: 0.8,
-                                    ease: [0.33, 1, 0.68, 1]
-                                }}
-                                className={letter === "S" ? "text-white" : "text-white/90"}
+                                transition={{ delay: 0.3 + i * 0.08, duration: 0.7, ease: [0.33, 1, 0.68, 1] }}
+                                className="text-[#1d1b16]"
                             >
                                 {letter}
                             </motion.span>
@@ -51,49 +45,44 @@ export default function Navbar() {
                         <motion.span
                             initial={{ scale: 0, opacity: 0 }}
                             animate={{ scale: 1, opacity: 1 }}
-                            transition={{ delay: 1.5, duration: 0.5 }}
-                            className="text-emerald-500 ml-0.5"
+                            transition={{ delay: 1.1, duration: 0.4 }}
+                            className="text-brand-500 ml-0.5"
                         >
                             .
                         </motion.span>
                     </motion.div>
                 </Link>
 
-                {/* Desktop Menu - Always visible but minimalist */}
-                <div className="hidden md:flex items-center gap-2">
-                    <button
-                        onClick={() => setIsOpen(!isOpen)}
-                        className={`group flex items-center gap-4 px-8 py-4 rounded-full transition-all duration-500 z-[60] border ${isOpen
-                            ? "bg-white text-black border-white"
-                            : "bg-black/20 backdrop-blur-md text-white border-white/10 hover:border-emerald-500/50 hover:bg-emerald-500/5"
-                            }`}
+                {/* Desktop Menu */}
+                <div className="hidden md:flex items-center gap-8">
+                    {navItems.map((item) => (
+                        <Link
+                            key={item.name}
+                            href={item.href}
+                            className="text-sm font-semibold text-[#1d1b16]/70 hover:text-[#1d1b16] transition-colors"
+                        >
+                            {item.name}
+                        </Link>
+                    ))}
+                    <a
+                        href="#contact"
+                        className="px-7 py-3 rounded-full bg-brand-400 text-black font-bold hover:bg-brand-500 transition-all duration-300 shadow-lg shadow-brand-400/30"
                     >
-                        <span className="text-xs uppercase tracking-[0.4em] font-black">
-                            {isOpen ? "Close" : "Menu"}
-                        </span>
-                        <div className="relative w-5 h-5">
-                            <motion.span
-                                animate={isOpen ? { rotate: 45, y: 0 } : { rotate: 0, y: -4 }}
-                                className="absolute top-1/2 left-0 w-5 h-[2px] bg-current block"
-                            />
-                            <motion.span
-                                animate={isOpen ? { rotate: -45, y: 0 } : { rotate: 0, y: 4 }}
-                                className="absolute top-1/2 left-0 w-5 h-[2px] bg-current block"
-                            />
-                        </div>
-                    </button>
+                        Let's Talk
+                    </a>
                 </div>
 
                 {/* Mobile Menu Toggle */}
                 <button
                     onClick={() => setIsOpen(!isOpen)}
-                    className="md:hidden z-[60] p-4 glass-card rounded-2xl text-white border border-white/10"
+                    className="md:hidden z-[60] w-12 h-12 rounded-full border border-black/10 bg-white text-[#1d1b16] flex items-center justify-center shadow-md"
+                    aria-label="Toggle menu"
                 >
-                    {isOpen ? <X className="w-8 h-8" /> : <Menu className="w-8 h-8" />}
+                    {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
                 </button>
             </div>
 
-            {/* Overlay Menu */}
+            {/* Mobile Overlay */}
             <AnimatePresence>
                 {isOpen && (
                     <>
@@ -101,29 +90,29 @@ export default function Navbar() {
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
-                            className="fixed inset-0 bg-black/90 backdrop-blur-2xl z-[55]"
+                            className="fixed inset-0 bg-black/30 backdrop-blur-sm z-[55]"
                             onClick={() => setIsOpen(false)}
                         />
                         <motion.div
                             initial={{ x: "100%" }}
                             animate={{ x: 0 }}
                             exit={{ x: "100%" }}
-                            transition={{ type: "spring", damping: 30, stiffness: 200 }}
-                            className="fixed top-0 right-0 h-screen w-full md:w-[500px] bg-[#080808] border-l border-white/5 z-[56] p-12 flex flex-col justify-center"
+                            transition={{ type: "spring", damping: 30, stiffness: 220 }}
+                            className="fixed top-0 right-0 h-screen w-full md:w-[420px] bg-[#faf9f7] border-l border-black/5 z-[56] p-10 flex flex-col justify-center shadow-2xl"
                         >
-                            <div className="space-y-10">
-                                <span className="text-emerald-400 text-xs uppercase tracking-[0.5em] font-bold block mb-6">Navigation</span>
+                            <span className="text-brand-700 font-mono text-xs uppercase tracking-[0.4em] font-bold block mb-8">Navigation</span>
+                            <div className="space-y-6">
                                 {navItems.map((item, i) => (
                                     <motion.div
                                         key={item.name}
                                         initial={{ opacity: 0, y: 20 }}
                                         animate={{ opacity: 1, y: 0 }}
-                                        transition={{ delay: 0.1 * i }}
+                                        transition={{ delay: 0.08 * i }}
                                     >
                                         <Link
                                             href={item.href}
                                             onClick={() => setIsOpen(false)}
-                                            className="text-6xl md:text-7xl font-bold text-white hover:text-emerald-500 transition-colors tracking-tighter"
+                                            className="text-5xl font-bold text-[#1d1b16] hover:text-brand-600 transition-colors tracking-tighter logo-text block"
                                         >
                                             {item.name}
                                         </Link>
@@ -131,12 +120,20 @@ export default function Navbar() {
                                 ))}
                             </div>
 
-                            <div className="mt-20 pt-10 border-t border-white/10 space-y-8">
-                                <span className="text-white/50 text-xs uppercase tracking-[0.5em] font-bold block">Get in touch</span>
-                                <a href={`mailto:${portfolioData.contact.email}`} className="text-white hover:text-emerald-500 transition-colors block text-xl font-medium">
+                            <a
+                                href="#contact"
+                                onClick={() => setIsOpen(false)}
+                                className="mt-12 text-center px-8 py-4 rounded-full bg-brand-400 text-black font-bold hover:bg-brand-500 transition-colors shadow-lg shadow-brand-400/30"
+                            >
+                                Let's Talk
+                            </a>
+
+                            <div className="mt-10 pt-8 border-t border-black/10 space-y-6">
+                                <span className="text-[#1d1b16]/50 text-xs uppercase tracking-[0.4em] font-bold block">Get in touch</span>
+                                <a href={`mailto:${portfolioData.contact.email}`} className="text-[#1d1b16] hover:text-brand-700 transition-colors block text-lg font-semibold">
                                     {portfolioData.contact.email}
                                 </a>
-                                <div className="flex gap-4 pt-4">
+                                <div className="flex gap-4 pt-2">
                                     <a href={portfolioData.contact.facebook} target="_blank" rel="noopener noreferrer" className="social-icon-btn social-btn-facebook" title="Facebook">
                                         <Facebook className="w-5 h-5" />
                                     </a>
