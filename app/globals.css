@@ -30,6 +30,32 @@
   --glass-border: rgba(23, 21, 18, 0.08);
 }
 
+html.dark {
+  --background: 30 15% 5%;
+  --foreground: 40 30% 95%;
+  --card: 30 12% 8%;
+  --card-foreground: 40 30% 95%;
+  --popover: 30 12% 8%;
+  --popover-foreground: 40 30% 95%;
+  --primary: 94 89% 58%;
+  --primary-foreground: 0 0% 0%;
+  --secondary: 30 10% 13%;
+  --secondary-foreground: 40 30% 95%;
+  --muted: 30 10% 13%;
+  --muted-foreground: 40 8% 68%;
+  --accent: 94 89% 58%;
+  --accent-foreground: 0 0% 0%;
+  --destructive: 0 63% 45%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 30 10% 15%;
+  --input: 30 10% 15%;
+  --ring: 94 89% 58%;
+  --mesh-bg-1: #0b0a09;
+  --mesh-bg-2: #141210;
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.08);
+}
+
 @layer base {
   * {
     @apply border-border;
@@ -180,4 +206,23 @@
 
 .ticker-track:hover {
   animation-play-state: paused;
+}
+
+/* Dark mode component overrides */
+html.dark .gradient-text {
+  background-image: linear-gradient(to bottom right, #f5f2ec, #7b786f);
+}
+
+html.dark .hero-line {
+  background-image: linear-gradient(to bottom right, #f5f2ec, #cfcbc2);
+}
+
+html.dark .social-icon-btn {
+  background: #191715;
+  border-color: rgba(255, 255, 255, 0.12);
+  color: #f5f2ec;
+}
+
+html.dark .social-icon-btn:hover {
+  background: #26231f;
 }

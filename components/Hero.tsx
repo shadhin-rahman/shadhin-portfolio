@@ -1,11 +1,11 @@
 "use client";
 import { motion } from "framer-motion";
 import { portfolioData } from "@/data/content";
-import { ArrowRight, ArrowUpRight, Award } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Award, BadgeCheck } from "lucide-react";
 
 export default function Hero() {
     return (
-        <section className="min-h-screen flex flex-col items-center justify-center pt-36 pb-20 px-6 relative overflow-hidden">
+        <section className="min-h-screen flex flex-col items-center justify-center pt-36 pb-24 px-6 relative overflow-hidden">
             {/* Background Decorative Elements */}
             <div className="brand-halo top-[12%] left-[-8%] w-[480px] h-[480px] opacity-60" />
             <div className="brand-halo bottom-[8%] right-[-6%] w-[420px] h-[420px] opacity-40" />
@@ -23,10 +23,10 @@ export default function Hero() {
                         initial={{ y: 24, opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
                         transition={{ delay: 0.3, duration: 0.8 }}
-                        className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full border border-black/10 bg-white shadow-sm mb-8"
+                        className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full border border-black/10 dark:border-white/10 bg-white dark:bg-white/5 shadow-sm mb-10"
                     >
                         <span className="w-2 h-2 rounded-full bg-brand-400 animate-pulse" />
-                        <span className="text-xs md:text-sm font-bold uppercase tracking-[0.25em] text-[#1d1b16]/70">
+                        <span className="text-xs md:text-sm font-bold uppercase tracking-[0.25em] text-[#1d1b16]/70 dark:text-white/70">
                             {portfolioData.hero.subHeading}
                         </span>
                     </motion.div>
@@ -35,19 +35,19 @@ export default function Hero() {
                         initial={{ y: 30, opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
                         transition={{ delay: 0.45, duration: 0.9 }}
-                        className="text-5xl md:text-7xl lg:text-[5.5rem] font-bold tracking-tighter leading-[1.04] mb-8"
+                        className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[1.12] mb-10"
                     >
                         Hi, I'm <span className="hero-line">Shadhin</span>
                         <br />
                         Designing with{" "}
-                        <span className="text-brand-700">pixel-perfect</span> precision.
+                        <span className="text-brand-700 dark:text-brand-400">pixel-perfect</span> precision.
                     </motion.h1>
 
                     <motion.p
                         initial={{ y: 30, opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
                         transition={{ delay: 0.6, duration: 0.9 }}
-                        className="text-lg md:text-2xl text-[#1d1b16]/60 mb-12 leading-relaxed max-w-2xl"
+                        className="text-lg md:text-2xl text-[#1d1b16]/60 dark:text-white/60 mb-14 leading-[1.85] max-w-2xl"
                     >
                         {portfolioData.hero.description}
                     </motion.p>
@@ -60,14 +60,14 @@ export default function Hero() {
                     >
                         <a
                             href="#portfolio"
-                            className="inline-flex items-center gap-3 px-9 py-5 rounded-full bg-brand-400 text-black font-bold text-lg hover:bg-brand-500 transition-all duration-300 shadow-xl shadow-brand-400/30 group"
+                            className="inline-flex items-center gap-3 px-10 py-5 rounded-full bg-brand-400 text-black font-bold text-lg hover:bg-brand-500 transition-all duration-300 shadow-xl shadow-brand-400/30 group"
                         >
                             View My Work
                             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                         </a>
                         <a
                             href="#contact"
-                            className="inline-flex items-center gap-3 px-9 py-5 rounded-full border border-black/15 bg-white text-[#1d1b16] font-bold text-lg hover:border-brand-600 hover:text-brand-700 transition-all duration-300 group"
+                            className="inline-flex items-center gap-3 px-10 py-5 rounded-full border border-black/15 dark:border-white/15 bg-white dark:bg-white/5 text-[#1d1b16] dark:text-[#f5f2ec] font-bold text-lg hover:border-brand-600 hover:text-brand-700 dark:hover:text-brand-400 transition-all duration-300 group"
                         >
                             Let's Talk
                             <ArrowUpRight className="w-5 h-5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
@@ -84,9 +84,9 @@ export default function Hero() {
                 >
                     <div className="relative w-full max-w-md mx-auto group">
                         {/* Glow behind portrait */}
-                        <div className="absolute inset-6 bg-brand-400/40 blur-[90px] rounded-full -z-10" />
+                        <div className="absolute inset-6 bg-brand-400/40 dark:bg-brand-400/25 blur-[90px] rounded-full -z-10" />
 
-                        <div className="relative rounded-[3rem] bg-white border border-black/10 shadow-2xl shadow-black/10 overflow-hidden">
+                        <div className="relative rounded-[3rem] bg-white dark:bg-[#141210] border border-black/10 dark:border-white/10 shadow-2xl shadow-black/10 overflow-hidden">
                             <img
                                 src="/Shadhin.png"
                                 alt={portfolioData.name}
@@ -98,12 +98,14 @@ export default function Hero() {
                         <motion.div
                             animate={{ y: [0, -10, 0] }}
                             transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-                            className="absolute -top-5 -left-4 md:-left-8 flex items-center gap-3 px-5 py-4 bg-[#1d1b16] text-white rounded-2xl shadow-xl z-20"
+                            className="absolute -top-6 -left-4 md:-left-10 flex items-center gap-3 px-5 py-4 bg-[#1d1b16] dark:bg-[#1d1b16] text-white rounded-2xl shadow-xl z-20"
                         >
-                            <Award className="w-6 h-6 text-brand-400" />
+                            <div className="w-11 h-11 rounded-full bg-brand-400 flex items-center justify-center">
+                                <Award className="w-6 h-6 text-black" />
+                            </div>
                             <div>
-                                <div className="text-lg font-black leading-none">14+ yrs</div>
-                                <div className="text-[11px] text-white/60 font-medium mt-1">Experience</div>
+                                <div className="text-xl font-black leading-none">14+ yrs</div>
+                                <div className="text-xs text-white/60 font-semibold mt-1.5">Experience</div>
                             </div>
                         </motion.div>
 
@@ -111,10 +113,17 @@ export default function Hero() {
                         <motion.div
                             animate={{ y: [0, 10, 0] }}
                             transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
-                            className="absolute -bottom-5 -right-4 md:-right-8 px-5 py-4 bg-white rounded-2xl border border-black/10 shadow-xl z-20"
+                            className="absolute -bottom-7 -right-4 md:-right-10 px-6 py-5 bg-white dark:bg-[#1d1b16] rounded-2xl border border-black/10 dark:border-white/10 shadow-xl z-20"
                         >
-                            <div className="text-[11px] uppercase tracking-[0.2em] font-bold text-[#1d1b16]/50">Quality</div>
-                            <div className="text-lg font-black text-brand-700 leading-tight mt-0.5">Pixel Perfect</div>
+                            <div className="flex gap-2 items-center mb-2">
+                                <BadgeCheck className="w-5 h-5 text-brand-600 dark:text-brand-400" />
+                                <span className="text-[11px] uppercase tracking-[0.2em] font-black text-[#1d1b16]/50 dark:text-white/50">
+                                    Quality
+                                </span>
+                            </div>
+                            <div className="text-lg md:text-xl font-black text-brand-700 dark:text-brand-400 leading-tight">
+                                Pixel Perfect
+                            </div>
                         </motion.div>
                     </div>
                 </motion.div>
