@@ -2,7 +2,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import { Facebook, Linkedin, Layout as BehanceIcon, MessageCircle, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { portfolioData } from "@/data/content";
 import ThemeToggle from "./ThemeToggle";
 
@@ -169,28 +169,15 @@ export default function Navbar() {
                                     </div>
 
                                     <div className="flex gap-3">
-                                        <a href={portfolioData.contact.facebook} target="_blank" rel="noopener noreferrer" className="social-icon-btn social-btn-facebook" title="Facebook">
-                                            <Facebook className="w-5 h-5" />
-                                        </a>
-                                        <a href={portfolioData.contact.whatsapp} target="_blank" rel="noopener noreferrer" className="social-icon-btn social-btn-whatsapp" title="WhatsApp">
-                                            <MessageCircle className="w-5 h-5" />
-                                        </a>
-                                        <a href={portfolioData.contact.linkedin} target="_blank" rel="noopener noreferrer" className="social-icon-btn social-btn-linkedin" title="LinkedIn">
-                                            <Linkedin className="w-5 h-5" />
-                                        </a>
-                                        <a href={portfolioData.contact.behance} target="_blank" rel="noopener noreferrer" className="social-icon-btn social-btn-behance" title="Behance">
-                                            <BehanceIcon className="w-5 h-5" />
-                                        </a>
+                                        <Link
+                                            href="/contact"
+                                            onClick={() => setIsOpen(false)}
+                                            className="inline-flex items-center justify-center gap-3 w-full px-8 py-4 rounded-full bg-brand-400 text-black font-black hover:bg-brand-500 transition-colors uppercase text-xs tracking-[0.4em] shadow-lg shadow-brand-400/30"
+                                        >
+                                            Let's Talk
+                                            <ArrowRight className="w-4 h-4" />
+                                        </Link>
                                     </div>
-
-                                    <Link
-                                        href="/contact"
-                                        onClick={() => setIsOpen(false)}
-                                        className="inline-flex items-center justify-center gap-3 w-full px-8 py-4 rounded-full bg-brand-400 text-black font-black hover:bg-brand-500 transition-colors uppercase text-xs tracking-[0.4em] shadow-lg shadow-brand-400/30"
-                                    >
-                                        Let's Talk
-                                        <ArrowRight className="w-4 h-4" />
-                                    </Link>
                                 </motion.div>
                             </div>
                         </motion.div>

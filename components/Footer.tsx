@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { portfolioData } from "@/data/content";
-import { ArrowUp } from "lucide-react";
+import { ArrowUp, Facebook, Linkedin, Layout as BehanceIcon, MessageCircle, Mail } from "lucide-react";
 
 const sections = [
     { id: "home", label: "Home" },
@@ -8,6 +8,14 @@ const sections = [
     { id: "services", label: "Services" },
     { id: "portfolio", label: "Portfolio" },
     { id: "contact", label: "Contact" },
+];
+
+const socials = [
+    { label: "Email", href: `mailto:${portfolioData.contact.email}`, icon: Mail, cls: "social-btn-mail" },
+    { label: "Facebook", href: portfolioData.contact.facebook, icon: Facebook, cls: "social-btn-facebook" },
+    { label: "WhatsApp", href: portfolioData.contact.whatsapp, icon: MessageCircle, cls: "social-btn-whatsapp" },
+    { label: "LinkedIn", href: portfolioData.contact.linkedin, icon: Linkedin, cls: "social-btn-linkedin" },
+    { label: "Behance", href: portfolioData.contact.behance, icon: BehanceIcon, cls: "social-btn-behance" },
 ];
 
 export default function Footer() {
@@ -41,6 +49,27 @@ export default function Footer() {
                         Back to top
                         <ArrowUp className="w-4 h-4" />
                     </a>
+                </div>
+
+                <div className="pt-8 border-t border-black/10 dark:border-white/10 flex flex-col items-center gap-5">
+                    <span className="text-[#1d1b16]/40 dark:text-white/40 font-mono text-xs uppercase tracking-[0.4em] font-bold">
+                        Find me online
+                    </span>
+                    <div className="flex flex-wrap justify-center gap-4">
+                        {socials.map((s) => (
+                            <a
+                                key={s.label}
+                                href={s.href}
+                                target={s.href.startsWith("mailto:") ? undefined : "_blank"}
+                                rel={s.href.startsWith("mailto:") ? undefined : "noopener noreferrer"}
+                                className={`social-icon-btn ${s.cls} group`}
+                                title={s.label}
+                            >
+                                <s.icon className="w-5 h-5" />
+                                <span className="sr-only">{s.label}</span>
+                            </a>
+                        ))}
+                    </div>
                 </div>
             </div>
         </footer>
