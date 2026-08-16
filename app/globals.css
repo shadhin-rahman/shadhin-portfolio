@@ -69,6 +69,10 @@ html.dark {
     font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
+
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 @layer components {

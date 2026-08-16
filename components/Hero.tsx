@@ -1,7 +1,8 @@
 "use client";
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { portfolioData } from "@/data/content";
-import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export default function Hero() {
     return (
@@ -58,20 +59,13 @@ export default function Hero() {
                         transition={{ delay: 0.75, duration: 0.9 }}
                         className="flex flex-col sm:flex-row gap-5 items-start"
                     >
-                        <a
-                            href="#portfolio"
+                        <Link
+                            href="/portfolio"
                             className="inline-flex items-center gap-3 px-10 py-5 rounded-full bg-brand-400 text-black font-bold text-lg hover:bg-brand-500 transition-all duration-300 shadow-xl shadow-brand-400/30 group"
                         >
                             View My Work
                             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                        </a>
-                        <a
-                            href="#contact"
-                            className="inline-flex items-center gap-3 px-10 py-5 rounded-full border border-black/15 dark:border-white/15 bg-white dark:bg-white/5 text-[#1d1b16] dark:text-[#f5f2ec] font-bold text-lg hover:border-brand-600 hover:text-brand-700 dark:hover:text-brand-400 transition-all duration-300 group"
-                        >
-                            Let's Talk
-                            <ArrowUpRight className="w-5 h-5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                        </a>
+                        </Link>
                     </motion.div>
                 </motion.div>
 

@@ -26,11 +26,11 @@ export default function Navbar() {
     }, [isOpen]);
 
     const navItems = [
-        { name: "Home", href: "/", no: "01" },
-        { name: "About", href: "/about", no: "02" },
-        { name: "Services", href: "/services", no: "03" },
-        { name: "Portfolio", href: "/portfolio", no: "04" },
-        { name: "Contact", href: "/contact", no: "05" },
+        { name: "Home", href: "/" },
+        { name: "About", href: "/about" },
+        { name: "Services", href: "/services" },
+        { name: "Portfolio", href: "/portfolio" },
+        { name: "Contact", href: "/contact" },
     ];
 
     return (
@@ -138,13 +138,8 @@ export default function Navbar() {
                                                 onClick={() => setIsOpen(false)}
                                                 className="group relative block py-4 border-b border-black/5 dark:border-white/5 transition-colors"
                                             >
-                                                <span className="flex items-baseline gap-4">
-                                                    <span className="font-mono text-sm font-bold text-brand-700 dark:text-brand-400 transition-colors group-hover:text-brand-600 dark:group-hover:text-brand-400">
-                                                        {item.no}
-                                                    </span>
-                                                    <span className="logo-text text-3xl md:text-4xl font-bold text-[#1d1b16] dark:text-[#f5f2ec] group-hover:text-brand-700 dark:group-hover:text-brand-400 group-hover:translate-x-1.5 transition-all duration-300 tracking-tight">
-                                                        {item.name}
-                                                    </span>
+                                                <span className="logo-text text-3xl md:text-4xl font-bold text-[#1d1b16] dark:text-[#f5f2ec] group-hover:text-brand-700 dark:group-hover:text-brand-400 group-hover:translate-x-1.5 transition-all duration-300 tracking-tight">
+                                                    {item.name}
                                                 </span>
                                                 <span className="absolute left-0 bottom-0 h-[3px] w-0 bg-brand-400 rounded-full group-hover:w-full transition-all duration-500" />
                                             </Link>

@@ -1,19 +1,60 @@
 "use client";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { Send, User, Mail, MessageSquare, Loader2 } from "lucide-react";
+import { portfolioData } from "@/data/content";
+
+const ACCESS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY;
 
 export default function ContactForm() {
     const [isSubmitting, setIsSubmitting] = useState(false);
-    const [isSuccess, setIsSuccess] = useState(false);
+    const formRef = useRef<HTMLFormElement>(null);
 
-    const handleSubmit = async (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        setIsSubmitting(true);
-        await new Promise((resolve) => setTimeout(resolve, 2000));
-        setIsSubmitting(false);
-        setIsSuccess(true);
-        setTimeout(() => setIsSuccess(false), 3000);
+        const form = formRef.current;
+        if (!form) return;
+
+        const formData = new FormData(form);
+        const name = String(formData.get("name") || "");
+        const email = String(formData.get("email") || "");
+        const message = String(formData.get("message") || "");
+
+        if (ACCESS_KEY) {
+            setIsSubmitting(true);
+            try {
+                const res = await fetch("https://api.web3forms.com/submit", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json", Accept: "application/json" },
+                    body: JSON.stringify({
+                        access_key: ACCESS_KEY,
+                        subject: "New message from portfolio",
+                        name,
+                        email,
+                        message,
+                    }),
+                });
+                const data = await res.json();
+                if (data.success) {
+                    form.reset();
+                    window.alert("Message sent! Thank you, I'll get back to you soon.");
+                } else {
+                    window.alert("Something went wrong. Please try again or reach out on WhatsApp.");
+                }
+            } catch {
+                window.alert("Network error. Please try again or reach out on WhatsApp.");
+            } finally {
+                setIsSubmitting(false);
+            }
+            return;
+        }
+
+        const preview = `Hi Shadhin, my name is ${name}.${email ? ` My email is ${email}.` : ""} Message: ${message}`;
+        window.open(
+            `${portfolioData.contact.whatsapp}?text=${encodeURIComponent(preview)}`,
+            "_blank",
+            "noopener,noreferrer"
+        );
     };
 
     const fieldClass =
@@ -26,7 +67,7 @@ export default function ContactForm() {
             viewport={{ once: true }}
             className="w-full max-w-lg mx-auto"
         >
-            <form onSubmit={handleSubmit} className="space-y-6 bg-white dark:bg-white/[0.03] rounded-[2.5rem] border border-black/10 dark:border-white/10 p-8 md:p-10 relative overflow-hidden shadow-xl shadow-black/5">
+            <form ref={formRef} onSubmit={handleSubmit} className="space-y-6 bg-white dark:bg-white/[0.03] rounded-[2.5rem] border border-black/10 dark:border-white/10 p-8 md:p-10 relative overflow-hidden shadow-xl shadow-black/5">
                 <div className="absolute -top-16 -right-16 w-64 h-64 bg-brand-400/25 dark:bg-brand-400/10 blur-[80px] rounded-full -z-0" />
 
                 <div className="space-y-3 mb-8 relative z-10">
@@ -41,17 +82,18 @@ export default function ContactForm() {
                 <div className="space-y-4 relative z-10">
                     <div className="relative group">
                         <User className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[#1d1b16]/30 dark:text-white/30 group-focus-within:text-brand-700 dark:group-focus-within:text-brand-400 transition-colors" />
-                        <input type="text" placeholder="Your Name" required className={fieldClass} />
+                        <input type="text" name="name" placeholder="Your Name" required className={fieldClass} />
                     </div>
 
                     <div className="relative group">
                         <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[#1d1b16]/30 dark:text-white/30 group-focus-within:text-brand-700 dark:group-focus-within:text-brand-400 transition-colors" />
-                        <input type="email" placeholder="Email Address" required className={fieldClass} />
+                        <input type="email" name="email" placeholder="Email Address" required className={fieldClass} />
                     </div>
 
                     <div className="relative group">
                         <MessageSquare className="absolute left-4 top-6 w-5 h-5 text-[#1d1b16]/30 dark:text-white/30 group-focus-within:text-brand-700 dark:group-focus-within:text-brand-400 transition-colors" />
                         <textarea
+                            name="message"
                             placeholder="Tell me about your project..."
                             required
                             rows={4}
@@ -67,8 +109,6 @@ export default function ContactForm() {
                 >
                     {isSubmitting ? (
                         <Loader2 className="w-5 h-5 animate-spin" />
-                    ) : isSuccess ? (
-                        <span>Message Sent!</span>
                     ) : (
                         <>
                             <span>Send Message</span>
@@ -76,6 +116,11 @@ export default function ContactForm() {
                         </>
                     )}
                 </button>
+                {!ACCESS_KEY && (
+                    <p className="text-[#1d1b16]/40 dark:text-white/40 text-xs font-mono mt-2 text-center relative z-10">
+                        Sends directly to my WhatsApp
+                    </p>
+                )}
             </form>
         </motion.div>
     );

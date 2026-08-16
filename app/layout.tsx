@@ -3,6 +3,7 @@ import { Plus_Jakarta_Sans, Space_Grotesk } from "next/font/google";
 import Cursor from "@/components/Cursor";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import WhatsAppFloat from "@/components/WhatsAppFloat";
 import "./globals.css";
 
 const bodyFont = Plus_Jakarta_Sans({
@@ -47,6 +48,7 @@ export default function RootLayout({
                 <Navbar />
                 {children}
                 <Footer />
+                <WhatsAppFloat />
             </body>
         </html>
     );
