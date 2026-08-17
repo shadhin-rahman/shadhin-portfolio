@@ -6,11 +6,11 @@ export default function CreativeFocus() {
         <section className="scroll-mt-32 max-w-7xl mx-auto px-6 pb-24 md:pb-32">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-20 items-center">
                 <div className="space-y-8 order-2 md:order-1">
-                    <span className="text-sm font-mono font-bold uppercase tracking-[0.4em] text-brand-700 dark:text-brand-400 block">
+                    <span className="text-sm font-mono font-bold uppercase tracking-[0.4em] text-brand-700 dark:text-brand-300 block">
                         Creative Focus
                     </span>
                     <h3 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.15] logo-text text-[#1d1b16] dark:text-[#f5f2ec]">
-                        Design with <span className="text-brand-700 dark:text-brand-400 italic">purpose.</span>
+                        Design with <span className="text-brand-700 dark:text-brand-300 italic">purpose.</span>
                     </h3>
                     <p className="text-[#1d1b16]/60 dark:text-white/60 text-xl font-light leading-[1.85] max-w-xl">
                         My approach combines 14 years of professional technical expertise with a creative eye for
@@ -18,7 +18,7 @@ export default function CreativeFocus() {
                         strategically effective.
                     </p>
                     <div className="flex items-center gap-4 pt-2">
-                        <div className="h-1 w-14 rounded-full bg-brand-400" />
+                        <div className="h-1 w-14 rounded-full bg-brand-300" />
                         <p className="text-[#1d1b16]/40 dark:text-white/40 font-mono text-sm uppercase tracking-widest font-semibold">
                             Innovation · Excellence · Precision
                         </p>

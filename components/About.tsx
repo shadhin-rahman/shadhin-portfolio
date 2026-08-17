@@ -16,16 +16,16 @@ export default function About() {
             <div className="flex flex-col md:flex-row gap-16 md:gap-24 items-start">
                 {/* Title Column */}
                 <div className="md:w-1/3 md:sticky md:top-32">
-                    <span className="text-sm font-mono font-bold uppercase tracking-[0.4em] text-brand-700 dark:text-brand-400 mb-6 block">
+                    <span className="text-sm font-mono font-bold uppercase tracking-[0.4em] text-brand-700 dark:text-brand-300 mb-6 block">
                         About Me
                     </span>
                     <h3 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.2] mb-8 logo-text">
                         Crafting visual{" "}
-                        <span className="text-brand-700 dark:text-brand-400">excellence</span> for 14+ years.
+                        <span className="text-brand-700 dark:text-brand-300">excellence</span> for 14+ years.
                     </h3>
-                    <div className="w-16 h-1.5 rounded-full bg-brand-400" />
+                    <div className="w-16 h-1.5 rounded-full bg-brand-300" />
                     <div className="mt-8 flex items-center gap-3 text-[#1d1b16]/60 dark:text-white/60 font-medium text-lg">
-                        <MapPin className="w-5 h-5 text-brand-700 dark:text-brand-400" />
+                        <MapPin className="w-5 h-5 text-brand-700 dark:text-brand-300" />
                         {portfolioData.contact.location}
                     </div>
                 </div>

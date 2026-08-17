@@ -18,7 +18,7 @@ export default function AboutPage() {
                 title={
                     <>
                         Crafting visual{" "}
-                        <span className="text-brand-700 dark:text-brand-400">excellence</span> for 14+ years.
+                        <span className="text-brand-700 dark:text-brand-300">excellence</span> for 14+ years.
                     </>
                 }
                 description="Senior Graphic Designer & Service Manager based in Dhaka, Bangladesh — specializing in high-end image editing, creative design, and team leadership."

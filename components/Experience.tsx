@@ -7,12 +7,12 @@ export default function Experience() {
     return (
         <section id="experience" className="scroll-mt-32 max-w-7xl mx-auto px-6 py-24 md:py-32">
             <div className="mb-16 md:mb-20">
-                <span className="text-sm font-mono font-bold uppercase tracking-[0.4em] text-brand-700 dark:text-brand-400 mb-6 block">
+                <span className="text-sm font-mono font-bold uppercase tracking-[0.4em] text-brand-700 dark:text-brand-300 mb-6 block">
                     Professional Story
                 </span>
                 <h3 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.15] logo-text">
                     Experience{" "}
-                    <span className="text-brand-700 dark:text-brand-400">that speaks.</span>
+                    <span className="text-brand-700 dark:text-brand-300">that speaks.</span>
                 </h3>
             </div>
 
@@ -28,7 +28,7 @@ export default function Experience() {
                     >
                         {/* Period */}
                         <div className="flex items-center md:pt-1.5">
-                            <span className="inline-flex items-center gap-2.5 px-5 py-2 rounded-full bg-brand-100 dark:bg-brand-400/15 text-brand-800 dark:text-brand-300 text-sm md:text-base font-bold font-mono tracking-tight">
+                            <span className="inline-flex items-center gap-2.5 px-5 py-2 rounded-full bg-brand-100 dark:bg-brand-300/15 text-brand-800 dark:text-brand-300 text-sm md:text-base font-bold font-mono tracking-tight">
                                 <Briefcase className="w-4 h-4" />
                                 {exp.period}
                             </span>
@@ -50,7 +50,7 @@ export default function Experience() {
                         </div>
 
                         {/* Hover Accent */}
-                        <div className="absolute left-0 top-0 bottom-0 w-1 bg-brand-400 scale-y-0 group-hover:scale-y-100 transition-transform duration-500 origin-top rounded-full" />
+                        <div className="absolute left-0 top-0 bottom-0 w-1 bg-brand-300 scale-y-0 group-hover:scale-y-100 transition-transform duration-500 origin-top rounded-full" />
                     </motion.div>
                 ))}
             </div>

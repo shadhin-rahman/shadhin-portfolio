@@ -19,13 +19,13 @@ export default function PageHeader({
             <div className="max-w-7xl mx-auto relative z-10">
                 <Link
                     href="/"
-                    className="inline-flex items-center gap-2 text-sm font-bold text-[#1d1b16]/60 dark:text-white/60 hover:text-brand-700 dark:hover:text-brand-400 transition-colors mb-10"
+                    className="inline-flex items-center gap-2 text-sm font-bold text-[#1d1b16]/60 dark:text-white/60 hover:text-brand-700 dark:hover:text-brand-300 transition-colors mb-10"
                 >
                     <ArrowLeft className="w-4 h-4" />
                     Back to home
                 </Link>
 
-                <span className="text-sm font-mono font-bold uppercase tracking-[0.4em] text-brand-700 dark:text-brand-400 mb-6 block">
+                <span className="text-sm font-mono font-bold uppercase tracking-[0.4em] text-brand-700 dark:text-brand-300 mb-6 block">
                     {eyebrow}
                 </span>
                 <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[1.12] logo-text text-[#1d1b16] dark:text-[#f5f2ec] max-w-4xl">

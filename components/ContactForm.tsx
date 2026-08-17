@@ -68,7 +68,7 @@ export default function ContactForm() {
             className="w-full max-w-lg mx-auto"
         >
             <form ref={formRef} onSubmit={handleSubmit} className="space-y-6 bg-white dark:bg-white/[0.03] rounded-[2.5rem] border border-black/10 dark:border-white/10 p-8 md:p-10 relative overflow-hidden shadow-xl shadow-black/5">
-                <div className="absolute -top-16 -right-16 w-64 h-64 bg-brand-400/25 dark:bg-brand-400/10 blur-[80px] rounded-full -z-0" />
+                <div className="absolute -top-16 -right-16 w-64 h-64 bg-brand-300/25 dark:bg-brand-300/10 blur-[80px] rounded-full -z-0" />
 
                 <div className="space-y-3 mb-8 relative z-10">
                     <h3 className="text-3xl font-bold tracking-tight logo-text text-[#1d1b16] dark:text-[#f5f2ec]">
@@ -81,17 +81,17 @@ export default function ContactForm() {
 
                 <div className="space-y-4 relative z-10">
                     <div className="relative group">
-                        <User className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[#1d1b16]/30 dark:text-white/30 group-focus-within:text-brand-700 dark:group-focus-within:text-brand-400 transition-colors" />
+                        <User className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[#1d1b16]/30 dark:text-white/30 group-focus-within:text-brand-700 dark:group-focus-within:text-brand-300 transition-colors" />
                         <input type="text" name="name" placeholder="Your Name" required className={fieldClass} />
                     </div>
 
                     <div className="relative group">
-                        <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[#1d1b16]/30 dark:text-white/30 group-focus-within:text-brand-700 dark:group-focus-within:text-brand-400 transition-colors" />
+                        <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[#1d1b16]/30 dark:text-white/30 group-focus-within:text-brand-700 dark:group-focus-within:text-brand-300 transition-colors" />
                         <input type="email" name="email" placeholder="Email Address" required className={fieldClass} />
                     </div>
 
                     <div className="relative group">
-                        <MessageSquare className="absolute left-4 top-6 w-5 h-5 text-[#1d1b16]/30 dark:text-white/30 group-focus-within:text-brand-700 dark:group-focus-within:text-brand-400 transition-colors" />
+                        <MessageSquare className="absolute left-4 top-6 w-5 h-5 text-[#1d1b16]/30 dark:text-white/30 group-focus-within:text-brand-700 dark:group-focus-within:text-brand-300 transition-colors" />
                         <textarea
                             name="message"
                             placeholder="Tell me about your project..."
@@ -105,7 +105,7 @@ export default function ContactForm() {
                 <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full relative z-10 bg-brand-400 text-black font-black py-4 rounded-2xl flex items-center justify-center gap-2 hover:bg-brand-500 transition-all duration-300 disabled:opacity-70 disabled:cursor-not-allowed group shadow-lg shadow-brand-400/30"
+                    className="w-full relative z-10 bg-brand-400 text-white font-black py-4 rounded-2xl flex items-center justify-center gap-2 hover:bg-brand-500 transition-all duration-300 disabled:opacity-70 disabled:cursor-not-allowed group shadow-lg shadow-brand-400/30"
                 >
                     {isSubmitting ? (
                         <Loader2 className="w-5 h-5 animate-spin" />

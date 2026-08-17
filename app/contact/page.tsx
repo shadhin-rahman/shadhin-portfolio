@@ -15,7 +15,7 @@ export default function ContactPage() {
                 title={
                     <>
                         Let's create something{" "}
-                        <span className="text-brand-700 dark:text-brand-400">iconic.</span>
+                        <span className="text-brand-700 dark:text-brand-300">iconic.</span>
                     </>
                 }
                 description="Feel free to contact me for professional image editing, creative design projects, or collaboration opportunities."

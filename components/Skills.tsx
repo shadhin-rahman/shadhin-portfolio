@@ -6,11 +6,11 @@ export default function Skills() {
     return (
         <section id="skills" className="scroll-mt-32 max-w-7xl mx-auto px-6 py-24 md:py-32">
             <div className="mb-16 md:mb-20">
-                <span className="text-sm font-mono font-bold uppercase tracking-[0.4em] text-brand-700 dark:text-brand-400 mb-6 block">
+                <span className="text-sm font-mono font-bold uppercase tracking-[0.4em] text-brand-700 dark:text-brand-300 mb-6 block">
                     Core Capabilities
                 </span>
                 <h3 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.15] logo-text">
-                    My <span className="text-brand-700 dark:text-brand-400">toolkit.</span>
+                    My <span className="text-brand-700 dark:text-brand-300">toolkit.</span>
                 </h3>
             </div>
 
@@ -26,13 +26,13 @@ export default function Skills() {
                     >
                         <h4 className="text-sm uppercase font-mono tracking-[0.3em] text-[#1d1b16]/40 dark:text-white/40 border-b border-black/10 dark:border-white/10 pb-5 mb-6 font-bold flex items-center justify-between">
                             {category}
-                            <span className="w-1.5 h-1.5 rounded-full bg-brand-400" />
+                            <span className="w-1.5 h-1.5 rounded-full bg-brand-300" />
                         </h4>
                         <div className="flex flex-wrap gap-3">
                             {items.map((skill) => (
                                 <span
                                     key={skill}
-                                    className="px-4 py-2 text-sm font-medium text-[#1d1b16]/80 dark:text-white/80 border border-black/10 dark:border-white/10 rounded-full bg-[#faf9f7] dark:bg-white/5 hover:border-brand-500 hover:text-brand-800 dark:hover:text-brand-300 hover:bg-brand-100 dark:hover:bg-brand-400/10 transition-all duration-300 cursor-default"
+                                    className="px-4 py-2 text-sm font-medium text-[#1d1b16]/80 dark:text-white/80 border border-black/10 dark:border-white/10 rounded-full bg-[#faf9f7] dark:bg-white/5 hover:border-brand-500 hover:text-brand-800 dark:hover:text-brand-300 hover:bg-brand-100 dark:hover:bg-brand-300/10 transition-all duration-300 cursor-default"
                                 >
                                     {skill}
                                 </span>

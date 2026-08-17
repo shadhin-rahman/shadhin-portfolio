@@ -38,7 +38,7 @@ export default function Navbar() {
             <div className="flex justify-between items-center px-5 md:px-10">
                 {/* Logo */}
                 <Link href="/" className="logo-text z-[60] text-xl md:text-2xl font-bold tracking-tight text-[#1d1b16] dark:text-[#f5f2ec]">
-                    Shadhin<span className="text-brand-600 dark:text-brand-400">.</span>
+                    Shadhin<span className="text-brand-600 dark:text-brand-300">.</span>
                 </Link>
 
                 {/* Right Cluster */}
@@ -46,7 +46,7 @@ export default function Navbar() {
                     <ThemeToggle />
                     <a
                         href="/contact"
-                        className="px-8 py-4 rounded-full bg-brand-400 text-black font-black hover:bg-brand-500 transition-all duration-300 text-xs uppercase tracking-[0.4em] whitespace-nowrap shadow-lg shadow-brand-400/30"
+                        className="px-8 py-4 rounded-full bg-brand-400 text-white font-black hover:bg-brand-500 transition-all duration-300 text-xs uppercase tracking-[0.4em] whitespace-nowrap shadow-lg shadow-brand-400/30"
                     >
                         Let's Talk
                     </a>
@@ -54,7 +54,7 @@ export default function Navbar() {
                         onClick={() => setIsOpen(!isOpen)}
                         className={`group flex items-center gap-4 px-8 py-4 rounded-full transition-all duration-500 z-[60] border ${isOpen
                             ? "bg-[#1d1b16] dark:bg-white text-white dark:text-black border-[#1d1b16] dark:border-white"
-                            : "bg-brand-400 text-black border-transparent hover:bg-brand-500"
+                            : "bg-brand-400 text-white border-transparent hover:bg-brand-500"
                             }`}
                         aria-label="Toggle menu"
                     >
@@ -81,7 +81,7 @@ export default function Navbar() {
                         onClick={() => setIsOpen(!isOpen)}
                         className={`group flex items-center gap-3 px-5 py-3.5 rounded-full transition-all duration-500 z-[60] border ${isOpen
                             ? "bg-[#1d1b16] dark:bg-white text-white dark:text-black border-[#1d1b16] dark:border-white"
-                            : "bg-brand-400 text-black border-transparent hover:bg-brand-500"
+                            : "bg-brand-400 text-white border-transparent hover:bg-brand-500"
                             }`}
                         aria-label="Toggle menu"
                     >
@@ -121,7 +121,7 @@ export default function Navbar() {
                             className="fixed top-0 right-0 h-screen w-full md:w-[460px] bg-[#faf9f7] dark:bg-[#0c0b0a] border-l border-black/10 dark:border-white/10 z-[56] flex flex-col overflow-y-auto"
                         >
                             <div className="flex-1 px-8 md:px-12 py-10 flex flex-col">
-                                <span className="text-brand-700 dark:text-brand-400 font-mono text-xs uppercase tracking-[0.4em] font-bold block mb-8">
+                                <span className="text-brand-700 dark:text-brand-300 font-mono text-xs uppercase tracking-[0.4em] font-bold block mb-8">
                                     Navigation
                                 </span>
 
@@ -138,10 +138,10 @@ export default function Navbar() {
                                                 onClick={() => setIsOpen(false)}
                                                 className="group relative block py-4 border-b border-black/5 dark:border-white/5 transition-colors"
                                             >
-                                                <span className="logo-text text-3xl md:text-4xl font-bold text-[#1d1b16] dark:text-[#f5f2ec] group-hover:text-brand-700 dark:group-hover:text-brand-400 group-hover:translate-x-1.5 transition-all duration-300 tracking-tight">
+                                                <span className="logo-text text-3xl md:text-4xl font-bold text-[#1d1b16] dark:text-[#f5f2ec] group-hover:text-brand-700 dark:group-hover:text-brand-300 group-hover:translate-x-1.5 transition-all duration-300 tracking-tight">
                                                     {item.name}
                                                 </span>
-                                                <span className="absolute left-0 bottom-0 h-[3px] w-0 bg-brand-400 rounded-full group-hover:w-full transition-all duration-500" />
+                                                <span className="absolute left-0 bottom-0 h-[3px] w-0 bg-brand-300 rounded-full group-hover:w-full transition-all duration-500" />
                                             </Link>
                                         </motion.div>
                                     ))}
@@ -159,7 +159,7 @@ export default function Navbar() {
                                         </span>
                                         <a
                                             href={`mailto:${portfolioData.contact.email}`}
-                                            className="text-xl font-bold text-[#1d1b16] dark:text-[#f5f2ec] hover:text-brand-700 dark:hover:text-brand-400 transition-colors leading-snug break-all"
+                                            className="text-xl font-bold text-[#1d1b16] dark:text-[#f5f2ec] hover:text-brand-700 dark:hover:text-brand-300 transition-colors leading-snug break-all"
                                         >
                                             {portfolioData.contact.email}
                                         </a>
@@ -172,7 +172,7 @@ export default function Navbar() {
                                         <Link
                                             href="/contact"
                                             onClick={() => setIsOpen(false)}
-                                            className="inline-flex items-center justify-center gap-3 w-full px-8 py-4 rounded-full bg-brand-400 text-black font-black hover:bg-brand-500 transition-colors uppercase text-xs tracking-[0.4em] shadow-lg shadow-brand-400/30"
+                                            className="inline-flex items-center justify-center gap-3 w-full px-8 py-4 rounded-full bg-brand-400 text-white font-black hover:bg-brand-500 transition-colors uppercase text-xs tracking-[0.4em] shadow-lg shadow-brand-400/30"
                                         >
                                             Let's Talk
                                             <ArrowRight className="w-4 h-4" />

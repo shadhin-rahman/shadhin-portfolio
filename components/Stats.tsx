@@ -41,7 +41,7 @@ export default function Stats() {
     return (
         <section className="max-w-7xl mx-auto px-6 py-8 md:py-12">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 rounded-[2.5rem] md:rounded-[3rem] bg-[#1d1b16] dark:bg-[#1d1b16] p-10 md:p-16 overflow-hidden relative border border-white/5">
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[300px] bg-brand-400/20 rounded-full blur-[110px]" />
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[300px] bg-brand-300/20 rounded-full blur-[110px]" />
                 {stats.map((stat, i) => (
                     <motion.div
                         key={stat.label}
@@ -55,7 +55,7 @@ export default function Stats() {
                             <CountUp value={stat.value} suffix={stat.suffix} />
                         </div>
                         <div className="mt-6 flex items-center justify-center gap-3">
-                            <span className="w-2.5 h-2.5 rounded-full bg-brand-400" />
+                            <span className="w-2.5 h-2.5 rounded-full bg-brand-300" />
                             <p className="text-base md:text-lg font-bold uppercase tracking-[0.12em] text-white/80">
                                 {stat.label}
                             </p>

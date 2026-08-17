@@ -26,7 +26,7 @@ export default function Hero() {
                         transition={{ delay: 0.3, duration: 0.8 }}
                         className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full border border-black/10 dark:border-white/10 bg-white dark:bg-white/5 shadow-sm mb-10"
                     >
-                        <span className="w-2 h-2 rounded-full bg-brand-400 animate-pulse" />
+                        <span className="w-2 h-2 rounded-full bg-brand-300 animate-pulse" />
                         <span className="text-xs md:text-sm font-bold uppercase tracking-[0.25em] text-[#1d1b16]/70 dark:text-white/70">
                             {portfolioData.hero.subHeading}
                         </span>
@@ -41,7 +41,7 @@ export default function Hero() {
                         Hi, I'm <span className="hero-line">Shadhin</span>
                         <br />
                         Designing with{" "}
-                        <span className="text-brand-700 dark:text-brand-400">pixel-perfect</span> precision.
+                        <span className="text-brand-700 dark:text-brand-300">pixel-perfect</span> precision.
                     </motion.h1>
 
                     <motion.p
@@ -61,7 +61,7 @@ export default function Hero() {
                     >
                         <Link
                             href="/portfolio"
-                            className="inline-flex items-center gap-3 px-10 py-5 rounded-full bg-brand-400 text-black font-bold text-lg hover:bg-brand-500 transition-all duration-300 shadow-xl shadow-brand-400/30 group"
+                            className="inline-flex items-center gap-3 px-10 py-5 rounded-full bg-brand-400 text-white font-bold text-lg hover:bg-brand-500 transition-all duration-300 shadow-xl shadow-brand-400/30 group"
                         >
                             View My Work
                             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -78,7 +78,7 @@ export default function Hero() {
                 >
                     <div className="relative w-full max-w-md mx-auto group">
                         {/* Glow behind portrait */}
-                        <div className="absolute inset-6 bg-brand-400/40 dark:bg-brand-400/25 blur-[90px] rounded-full -z-10" />
+                        <div className="absolute inset-6 bg-brand-300/40 dark:bg-brand-300/25 blur-[90px] rounded-full -z-10" />
 
                         <div className="relative rounded-[3rem] bg-white dark:bg-[#141210] border border-black/10 dark:border-white/10 shadow-2xl shadow-black/10 overflow-hidden">
                             <img

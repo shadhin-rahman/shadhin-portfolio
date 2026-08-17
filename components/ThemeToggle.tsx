@@ -24,7 +24,7 @@ export default function ThemeToggle() {
             onClick={toggle}
             aria-label="Toggle theme"
             title={isDark ? "Switch to light mode" : "Switch to dark mode"}
-            className="inline-flex items-center justify-center transition-all duration-300 w-11 h-11 rounded-full glass-card text-[#1d1b16] dark:text-[#f5f2ec] hover:border-brand-500 hover:text-brand-700 dark:hover:text-brand-400"
+            className="inline-flex items-center justify-center transition-all duration-300 w-11 h-11 rounded-full glass-card text-[#1d1b16] dark:text-[#f5f2ec] hover:border-brand-500 hover:text-brand-700 dark:hover:text-brand-300"
         >
             {!mounted ? (
                 <Moon className="w-4 h-4" />

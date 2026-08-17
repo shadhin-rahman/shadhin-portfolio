@@ -15,7 +15,7 @@ export default function ServicesPage() {
                 eyebrow="What I Do"
                 title={
                     <>
-                        Core <span className="text-brand-700 dark:text-brand-400">specialties.</span>
+                        Core <span className="text-brand-700 dark:text-brand-300">specialties.</span>
                     </>
                 }
                 description="From high-end retouching to precise clipping paths — professional image editing and creative design that meets international standards."
