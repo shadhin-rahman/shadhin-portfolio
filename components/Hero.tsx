@@ -61,7 +61,7 @@ export default function Hero() {
                     >
                         <Link
                             href="/portfolio"
-                            className="inline-flex items-center gap-3 px-10 py-5 rounded-full bg-brand-400 text-white font-bold text-lg hover:bg-brand-500 transition-all duration-300 shadow-xl shadow-brand-400/30 group"
+                            className="inline-flex items-center gap-3 px-10 py-5 rounded-full bg-brand-400 text-white dark:text-black font-bold text-lg hover:bg-brand-500 transition-all duration-300 shadow-xl shadow-brand-400/30 group"
                         >
                             View My Work
                             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

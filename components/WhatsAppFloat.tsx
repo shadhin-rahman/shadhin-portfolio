@@ -33,17 +33,17 @@ export default function WhatsAppFloat() {
                             >
                                 <div className="bg-brand-400 px-6 py-5 flex items-center justify-between">
                                     <div className="flex items-center gap-3">
-                                        <span className="w-11 h-11 rounded-full bg-black text-brand-300 flex items-center justify-center">
+                                        <span className="w-11 h-11 rounded-full bg-black text-white flex items-center justify-center">
                                             <MessageCircle className="w-6 h-6" />
                                         </span>
                                         <div>
-                                            <p className="font-black text-white text-sm tracking-tight">Shadhin</p>
-                                            <p className="text-white/70 text-xs font-bold">Online</p>
+                                            <p className="font-black text-white dark:text-black text-sm tracking-tight">Shadhin</p>
+                                            <p className="text-white/70 dark:text-black/70 text-xs font-bold">Online</p>
                                         </div>
                                     </div>
                                     <button
                                         onClick={() => setOpen(false)}
-                                        className="w-9 h-9 rounded-full bg-white/15 hover:bg-white/25 transition-colors flex items-center justify-center text-white"
+                                        className="w-9 h-9 rounded-full bg-white/15 dark:bg-black/10 hover:bg-white/25 dark:hover:bg-black/20 transition-colors flex items-center justify-center text-white dark:text-black"
                                         aria-label="Close chat"
                                     >
                                         <X className="w-5 h-5" />
@@ -57,7 +57,7 @@ export default function WhatsAppFloat() {
                                         href={`${portfolioData.contact.whatsapp}?text=${encodeURIComponent("Hi Shadhin! I'd like to know more about your services.")}`}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="mt-4 w-full inline-flex items-center justify-center gap-2 bg-brand-400 text-white font-black py-3.5 rounded-2xl hover:bg-brand-500 transition-colors"
+                                        className="mt-4 w-full inline-flex items-center justify-center gap-2 bg-brand-400 text-white dark:text-black font-black py-3.5 rounded-2xl hover:bg-brand-500 transition-colors"
                                     >
                                         <MessageCircle className="w-5 h-5" />
                                         Start Chat

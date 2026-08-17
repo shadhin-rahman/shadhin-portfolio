@@ -9,24 +9,34 @@
   --card-foreground: 30 15% 7%;
   --popover: 40 25% 99%;
   --popover-foreground: 30 15% 7%;
-  --primary: 96 69% 23%;
+  --primary: 0 0% 5%;
   --primary-foreground: 0 0% 100%;
   --secondary: 40 22% 94%;
   --secondary-foreground: 30 15% 10%;
   --muted: 40 20% 93%;
   --muted-foreground: 40 6% 42%;
-  --accent: 96 69% 23%;
+  --accent: 0 0% 5%;
   --accent-foreground: 0 0% 100%;
   --destructive: 0 63% 45%;
   --destructive-foreground: 0 0% 100%;
   --border: 40 14% 88%;
   --input: 40 14% 88%;
-  --ring: 96 69% 23%;
+  --ring: 0 0% 5%;
   --radius: 1.5rem;
   --mesh-bg-1: #faf9f7;
-  --mesh-bg-2: #f3f1ec;
-  --glass-bg: rgba(255, 255, 255, 0.65);
+  --mesh-bg-2: #f0eee9;
+  --glass-bg: rgba(0, 0, 0, 0.03);
   --glass-border: rgba(23, 21, 18, 0.08);
+  --b50: 248 248 248;
+  --b100: 244 244 245;
+  --b200: 228 228 231;
+  --b300: 212 212 216;
+  --b400: 9 9 11;
+  --b500: 113 113 122;
+  --b600: 39 39 42;
+  --b700: 9 9 11;
+  --b800: 39 39 42;
+  --b900: 9 9 11;
 }
 
 html.dark {
@@ -36,23 +46,33 @@ html.dark {
   --card-foreground: 40 30% 95%;
   --popover: 30 12% 8%;
   --popover-foreground: 40 30% 95%;
-  --primary: 96 69% 23%;
-  --primary-foreground: 0 0% 100%;
+  --primary: 0 0% 98%;
+  --primary-foreground: 0 0% 5%;
   --secondary: 30 10% 13%;
   --secondary-foreground: 40 30% 95%;
   --muted: 30 10% 13%;
   --muted-foreground: 40 8% 68%;
-  --accent: 96 69% 23%;
-  --accent-foreground: 0 0% 100%;
+  --accent: 0 0% 98%;
+  --accent-foreground: 0 0% 5%;
   --destructive: 0 63% 45%;
   --destructive-foreground: 0 0% 100%;
   --border: 30 10% 15%;
   --input: 30 10% 15%;
-  --ring: 96 69% 23%;
-  --mesh-bg-1: #0b0a09;
-  --mesh-bg-2: #141210;
-  --glass-bg: rgba(255, 255, 255, 0.03);
+  --ring: 0 0% 98%;
+  --mesh-bg-1: #0f0f0f;
+  --mesh-bg-2: #141414;
+  --glass-bg: rgba(255, 255, 255, 0.04);
   --glass-border: rgba(255, 255, 255, 0.08);
+  --b50: 20 20 20;
+  --b100: 63 63 70;
+  --b200: 82 82 91;
+  --b300: 212 212 216;
+  --b400: 250 250 250;
+  --b500: 161 161 170;
+  --b600: 212 212 216;
+  --b700: 250 250 250;
+  --b800: 212 212 216;
+  --b900: 250 250 250;
 }
 
 @layer base {
@@ -155,7 +175,7 @@ html.dark {
 
   .brand-halo {
     @apply absolute pointer-events-none rounded-full blur-[90px];
-    background: radial-gradient(circle at center, hsla(96, 69%, 28%, 0.30), transparent 70%);
+    background: radial-gradient(circle at center, rgba(0, 0, 0, 0.18), transparent 70%);
   }
 
   .social-icon-btn {
@@ -186,8 +206,8 @@ html.dark {
 
 .mesh-gradient {
   background:
-    radial-gradient(at 0% 0%, hsla(96, 69%, 28%, 0.12) 0px, transparent 50%),
-    radial-gradient(at 100% 0%, hsla(45, 85%, 55%, 0.05) 0px, transparent 50%),
+    radial-gradient(at 0% 0%, rgba(0, 0, 0, 0.05) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(255, 255, 255, 0.06) 0px, transparent 50%),
     linear-gradient(to bottom, var(--mesh-bg-1), var(--mesh-bg-2));
 }
 

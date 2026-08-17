@@ -28,7 +28,7 @@ export default function Home() {
                             <div className="w-16 h-1.5 rounded-full bg-brand-300 mb-8" />
                             <a
                                 href="/about"
-                                className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-[#1d1b16] dark:bg-[#1d1b16] text-white font-bold hover:bg-brand-600 hover:text-white transition-colors group"
+                                className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-[#1d1b16] dark:bg-[#1d1b16] text-white font-bold hover:bg-brand-600 hover:text-white dark:hover:text-black transition-colors group"
                             >
                                 More About Me
                                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -79,7 +79,7 @@ export default function Home() {
                         <div className="pt-8 flex flex-wrap justify-center gap-5">
                             <a
                                 href="/portfolio"
-                                className="inline-flex items-center gap-4 px-9 py-5 rounded-full bg-white text-black font-bold text-lg hover:bg-brand-400 hover:text-white transition-all duration-300 group"
+                                className="inline-flex items-center gap-4 px-9 py-5 rounded-full bg-white text-black font-bold text-lg hover:bg-brand-400 hover:text-white dark:hover:bg-brand-300 dark:hover:text-black transition-all duration-300 group"
                             >
                                 Explore Portfolio
                                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -88,7 +88,7 @@ export default function Home() {
                                 href={portfolioData.contact.behance}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="inline-flex items-center gap-4 px-9 py-5 rounded-full bg-brand-400 text-white font-bold text-lg hover:bg-brand-500 transition-all duration-300 shadow-2xl shadow-brand-400/40 group"
+                                className="inline-flex items-center gap-4 px-9 py-5 rounded-full bg-brand-400 text-white dark:text-black font-bold text-lg hover:bg-brand-500 transition-all duration-300 shadow-2xl shadow-brand-400/40 group"
                             >
                                 View on Behance
                                 <ArrowUpRight className="w-5 h-5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
@@ -112,7 +112,7 @@ export default function Home() {
                     </div>
                     <a
                         href="/contact"
-                        className="inline-flex items-center gap-3 px-9 py-5 rounded-full bg-brand-400 text-white font-bold text-lg hover:bg-brand-500 transition-all duration-300 shadow-xl shadow-brand-400/30 group shrink-0"
+                        className="inline-flex items-center gap-3 px-9 py-5 rounded-full bg-brand-400 text-white dark:text-black font-bold text-lg hover:bg-brand-500 transition-all duration-300 shadow-xl shadow-brand-400/30 group shrink-0"
                     >
                         Contact Me
                         <ArrowUpRight className="w-5 h-5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />

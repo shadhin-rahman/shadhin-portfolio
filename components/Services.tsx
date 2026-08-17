@@ -26,7 +26,7 @@ export default function Services({ items, showCta = false }: { items?: number; s
                     {showCta && (
                         <a
                             href="/services"
-                            className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-brand-400 text-white font-bold hover:bg-brand-500 transition-colors shadow-lg shadow-brand-400/30 group"
+                            className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-brand-400 text-white dark:text-black font-bold hover:bg-brand-500 transition-colors shadow-lg shadow-brand-400/30 group"
                         >
                             View All Services
                             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -48,7 +48,7 @@ export default function Services({ items, showCta = false }: { items?: number; s
                         <div>
                             <div className="flex items-center justify-between mb-8">
                                 <div className="w-12 h-12 rounded-full bg-brand-100 dark:bg-brand-300/15 flex items-center justify-center group-hover:bg-brand-400 transition-colors duration-500">
-                                    <CheckCircle2 className="w-6 h-6 text-brand-700 dark:text-brand-300 group-hover:text-white transition-colors duration-500" />
+                                    <CheckCircle2 className="w-6 h-6 text-brand-700 dark:text-brand-300 group-hover:text-white dark:group-hover:text-black transition-colors duration-500" />
                                 </div>
                                 <span className="font-mono text-xs font-bold tracking-[0.2em] text-[#1d1b16]/30 dark:text-white/30 group-hover:text-brand-700 dark:group-hover:text-brand-300 transition-colors duration-500">
                                     {String(index + 1).padStart(2, "0")}

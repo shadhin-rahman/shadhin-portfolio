@@ -71,7 +71,7 @@ export default function PortfolioPage() {
                             href={portfolioData.contact.behance}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="relative z-10 mt-10 inline-flex items-center justify-center gap-4 px-8 py-5 rounded-full bg-brand-400 text-white font-bold text-lg hover:bg-brand-500 transition-all duration-300 shadow-2xl shadow-brand-400/40 group/btn"
+                            className="relative z-10 mt-10 inline-flex items-center justify-center gap-4 px-8 py-5 rounded-full bg-brand-400 text-white dark:text-black font-bold text-lg hover:bg-brand-500 transition-all duration-300 shadow-2xl shadow-brand-400/40 group/btn"
                         >
                             Explore my work on Behance
                             <ExternalLink className="w-5 h-5 group-hover/btn:rotate-12 transition-transform" />

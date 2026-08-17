@@ -44,7 +44,7 @@ export default function Footer() {
                     <div>© {new Date().getFullYear()} · {portfolioData.name}</div>
                     <a
                         href="#top"
-                        className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#1d1b16] dark:bg-[#1d1b16] text-white font-bold hover:bg-brand-600 hover:text-white transition-colors"
+                        className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#1d1b16] dark:bg-[#1d1b16] text-white font-bold hover:bg-brand-600 hover:text-white dark:hover:text-black transition-colors"
                     >
                         Back to top
                         <ArrowUp className="w-4 h-4" />

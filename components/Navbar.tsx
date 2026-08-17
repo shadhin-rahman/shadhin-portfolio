@@ -46,7 +46,7 @@ export default function Navbar() {
                     <ThemeToggle />
                     <a
                         href="/contact"
-                        className="px-8 py-4 rounded-full bg-brand-400 text-white font-black hover:bg-brand-500 transition-all duration-300 text-xs uppercase tracking-[0.4em] whitespace-nowrap shadow-lg shadow-brand-400/30"
+                        className="px-8 py-4 rounded-full bg-brand-400 text-white dark:text-black font-black hover:bg-brand-500 transition-all duration-300 text-xs uppercase tracking-[0.4em] whitespace-nowrap shadow-lg shadow-brand-400/30"
                     >
                         Let's Talk
                     </a>
@@ -54,7 +54,7 @@ export default function Navbar() {
                         onClick={() => setIsOpen(!isOpen)}
                         className={`group flex items-center gap-4 px-8 py-4 rounded-full transition-all duration-500 z-[60] border ${isOpen
                             ? "bg-[#1d1b16] dark:bg-white text-white dark:text-black border-[#1d1b16] dark:border-white"
-                            : "bg-brand-400 text-white border-transparent hover:bg-brand-500"
+                            : "bg-brand-400 text-white dark:text-black border-transparent hover:bg-brand-500"
                             }`}
                         aria-label="Toggle menu"
                     >
@@ -81,7 +81,7 @@ export default function Navbar() {
                         onClick={() => setIsOpen(!isOpen)}
                         className={`group flex items-center gap-3 px-5 py-3.5 rounded-full transition-all duration-500 z-[60] border ${isOpen
                             ? "bg-[#1d1b16] dark:bg-white text-white dark:text-black border-[#1d1b16] dark:border-white"
-                            : "bg-brand-400 text-white border-transparent hover:bg-brand-500"
+                            : "bg-brand-400 text-white dark:text-black border-transparent hover:bg-brand-500"
                             }`}
                         aria-label="Toggle menu"
                     >
@@ -172,7 +172,7 @@ export default function Navbar() {
                                         <Link
                                             href="/contact"
                                             onClick={() => setIsOpen(false)}
-                                            className="inline-flex items-center justify-center gap-3 w-full px-8 py-4 rounded-full bg-brand-400 text-white font-black hover:bg-brand-500 transition-colors uppercase text-xs tracking-[0.4em] shadow-lg shadow-brand-400/30"
+                                            className="inline-flex items-center justify-center gap-3 w-full px-8 py-4 rounded-full bg-brand-400 text-white dark:text-black font-black hover:bg-brand-500 transition-colors uppercase text-xs tracking-[0.4em] shadow-lg shadow-brand-400/30"
                                         >
                                             Let's Talk
                                             <ArrowRight className="w-4 h-4" />
